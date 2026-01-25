@@ -1,33 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <!-- =========================================================
-    SEO / META (placeholders)
+    SEO / META
   ========================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>texto</title>
-  <meta name="description" content="texto" />
+  <title>Trichomes Alchemy — La Elevación del Extracto</title>
+  <meta name="description" content="Trichomes Alchemy: donde la herencia del Rif se encuentra con la precisión molecular. Terroir, proceso técnico y galería digital de extracción premium." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#050507" />
 
-  <!-- Open Graph (placeholders) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="texto" />
-  <meta property="og:description" content="texto" />
+  <meta property="og:title" content="Trichomes Alchemy — La Elevación del Extracto" />
+  <meta property="og:description" content="Herencia del Rif + precisión molecular. Terroir, alchemy process y showcase digital premium." />
   <meta property="og:url" content="texto" />
   <meta property="og:image" content="texto" />
 
-  <!-- Twitter (placeholders) -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="texto" />
-  <meta name="twitter:description" content="texto" />
+  <meta name="twitter:title" content="Trichomes Alchemy — La Elevación del Extracto" />
+  <meta name="twitter:description" content="Herencia del Rif + precisión molecular. Terroir, alchemy process y showcase digital premium." />
   <meta name="twitter:image" content="texto" />
 
   <link rel="canonical" href="texto" />
 
-  <!-- Fonts: Orbitron + Inter (bold) -->
+  <!-- Fonts: Modern + Premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
@@ -44,17 +44,16 @@
           },
           colors: {
             ink: "#050507",
-            deep: "#150203",
-            fireRed: "#D31410",
-            fireOrange: "#DE5520",
-            fireGold: "#ECC563",
-            sand: "#CF8E4C",
-            maroc: "#005731",
-            paper: "#FFFFFF"
+            ink2: "#0B0B10",
+            champagne: "#E7D3A8",
+            champagne2: "#D9C08E",
+            gold: "#C9A65A",
+            line: "rgba(231,211,168,0.22)",
+            glass: "rgba(255,255,255,0.06)"
           },
           boxShadow: {
-            fire: "0 0 18px rgba(211,20,16,.18), 0 0 44px rgba(222,85,32,.18), 0 0 60px rgba(236,197,99,.10)",
-            fireStrong: "0 0 22px rgba(211,20,16,.22), 0 0 56px rgba(222,85,32,.22), 0 0 80px rgba(236,197,99,.14)"
+            glow: "0 0 24px rgba(231,211,168,0.10), 0 0 60px rgba(201,166,90,0.08)",
+            glass: "0 12px 40px rgba(0,0,0,.45)"
           }
         }
       }
@@ -68,394 +67,278 @@
     html { scroll-behavior: smooth; }
     body { background: #050507; }
 
-    /* Dark portal + warm fire glow */
-    .bg-portal {
+    /* Fondo oscuro minimal + halo champagne (sin “difuminado raro”) */
+    .bg-lab {
       background:
-        radial-gradient(900px 540px at 15% 15%, rgba(211,20,16,.16), transparent 60%),
-        radial-gradient(900px 540px at 75% 20%, rgba(222,85,32,.14), transparent 60%),
-        radial-gradient(900px 540px at 50% 85%, rgba(236,197,99,.10), transparent 65%),
-        linear-gradient(to bottom, #050507, #09070A 45%, #050507);
+        radial-gradient(900px 520px at 20% 10%, rgba(231,211,168,.10), transparent 60%),
+        radial-gradient(800px 480px at 75% 15%, rgba(201,166,90,.08), transparent 58%),
+        linear-gradient(to bottom, #050507, #0B0B10 50%, #050507);
       position: relative;
       overflow: hidden;
     }
 
-    /* Subtle grid */
-    .bg-portal::before {
+    /* Grano sutil premium */
+    .noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      opacity: .05;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      z-index: 0;
+    }
+
+    /* Sutil grid (laboratorio high-end) */
+    .gridlines::before {
       content: "";
       position: absolute;
       inset: -2px;
       background:
         linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 72%);
-      opacity: .32;
+      background-size: 40px 40px;
+      opacity: .20;
       pointer-events: none;
-    }
-
-    /* Noise overlay */
-    .noise {
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-      opacity: .06;
-      pointer-events: none;
-      mix-blend-mode: overlay;
       z-index: 0;
+      mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 70%);
     }
 
-    /* Ensure content above overlays */
+    /* Mantener contenido por encima */
     .layer-top { position: relative; z-index: 10; }
 
-    /* Hero logo scroll transform */
-    #heroLogo {
-      transform-origin: center;
-      will-change: transform, opacity, filter;
-      transition: filter 250ms ease;
-      filter:
-        drop-shadow(0 0 16px rgba(211,20,16,.14))
-        drop-shadow(0 0 28px rgba(222,85,32,.16))
-        drop-shadow(0 0 42px rgba(236,197,99,.10));
+    /* Tipografía premium */
+    .heading {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    /* Premium fiery button */
-    .btn-fire {
-      position: relative;
-      isolation: isolate;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    /* Botón cristal (glassmorphism) */
+    .btn-glass {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(231,211,168,0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
-    .btn-fire::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(211,20,16,.95), rgba(222,85,32,.95), rgba(236,197,99,.75));
-      z-index: -1;
-      opacity: .90;
-      filter: blur(10px);
-      transition: opacity 180ms ease, filter 180ms ease;
+    .btn-glass:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(231,211,168,0.40);
+      box-shadow: 0 16px 54px rgba(0,0,0,.55), 0 0 28px rgba(231,211,168,.08);
     }
-    .btn-fire:hover { transform: translateY(-1px); box-shadow: 0 0 22px rgba(211,20,16,.18), 0 0 46px rgba(222,85,32,.20); }
-    .btn-fire:hover::before { opacity: 1; filter: blur(14px); }
 
-    /* Card glass */
+    /* Botón secundario minimal */
+    .btn-min {
+      border: 1px solid rgba(231,211,168,0.18);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+    .btn-min:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(231,211,168,0.30);
+      transform: translateY(-1px);
+    }
+
+    /* Cards clean (sin verdes) */
     .card {
       background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(8px);
+      border: 1px solid rgba(231,211,168,0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
     }
     .card:hover {
-      border-color: rgba(222,85,32,.30);
-      box-shadow: 0 0 16px rgba(211,20,16,.12), 0 0 42px rgba(222,85,32,.12);
+      border-color: rgba(231,211,168,0.28);
+      box-shadow: 0 0 0 1px rgba(231,211,168,0.06), 0 18px 60px rgba(0,0,0,.40);
+      transform: translateY(-1px);
     }
 
-    /* Image zoom (if you later add images) */
-    .img-zoom {
-      transform: scale(1);
-      transition: transform 350ms ease, filter 350ms ease;
-      filter: saturate(1.05);
-    }
-    .card:hover .img-zoom { transform: scale(1.06); filter: saturate(1.2); }
-
+    /* Divider (champagne) */
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(211,20,16,.45), rgba(222,85,32,.45), rgba(236,197,99,.30), transparent);
-      opacity: .7;
+      background: linear-gradient(90deg, transparent, rgba(231,211,168,.35), rgba(201,166,90,.28), transparent);
+      opacity: .85;
     }
   </style>
 
-  <!-- Structured Data (placeholder) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "texto",
+    "name": "Trichomes Alchemy",
     "url": "texto",
-    "description": "texto"
+    "description": "Trichomes Alchemy: La Elevación del Extracto."
   }
   </script>
 </head>
 
-<body class="text-paper font-inter">
+<body class="text-white font-inter">
   <!-- =========================================================
-    HEADER (appears on scroll)
+    HEADER (clean, minimal)
   ========================================================== -->
-  <header id="topBar" class="fixed top-0 left-0 right-0 z-50 translate-y-[-100%] transition-transform duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md px-4 py-3">
+      <div class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-black/45 backdrop-blur-md px-4 py-3">
         <a href="#home" class="flex items-center gap-3">
-          <div class="h-8 w-8 rounded-lg border border-white/10 bg-gradient-to-br from-white/10 to-white/5"></div>
-          <span class="font-orbitron font-extrabold text-sm tracking-widest text-paper">texto</span>
+          <span class="font-orbitron font-extrabold heading text-[12px] text-champagne">TRICHOMES ALCHEMY</span>
         </a>
 
         <nav class="hidden md:flex items-center gap-6 text-sm text-white/70 font-bold">
-          <a class="hover:text-paper transition" href="#showcase">texto</a>
-          <a class="hover:text-paper transition" href="#info">texto</a>
-          <a class="hover:text-paper transition" href="#contact">texto</a>
+          <a class="hover:text-champagne transition" href="#origin">The Origin</a>
+          <a class="hover:text-champagne transition" href="#alchemy">The Alchemy</a>
+          <a class="hover:text-champagne transition" href="#showcase">Showcase</a>
         </nav>
 
-        <a href="#showcase" class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-paper font-bold hover:bg-white/10 transition">
-          texto
+        <a href="#showcase" class="rounded-full px-4 py-2 text-sm font-bold text-champagne btn-min">
+          Explorar
         </a>
       </div>
     </div>
   </header>
 
   <!-- =========================================================
-    HERO
+    HERO (Modern + Minimal Showcase)
   ========================================================== -->
-  <main id="home" class="bg-portal min-h-screen relative">
+  <main id="home" class="bg-lab gridlines min-h-screen relative">
     <div class="noise"></div>
 
-    <section id="hero" class="relative min-h-screen flex items-center">
+    <section class="min-h-screen flex items-center pt-24">
       <div class="mx-auto max-w-6xl px-4 w-full layer-top">
         <div class="grid lg:grid-cols-12 gap-10 items-center">
-          <!-- Logo + CTA -->
-          <div class="lg:col-span-7 text-center lg:text-left">
-            <div class="inline-block">
-              <!-- LOGO (keep your file name here) -->
-              <img
-                id="heroLogo"
-                src="./logo.png"
-                alt="StreetzFarmz logo"
-                class="mx-auto lg:mx-0 w-[min(520px,85vw)] select-none"
-                draggable="false"
-              />
-            </div>
-
-            <p class="mt-6 text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed font-bold">
-              <span class="text-fireGold">texto</span> <span class="text-white/70">texto</span>
-              <span class="text-fireOrange">texto</span> <span class="text-white/70">texto</span>
-              <span class="text-fireRed">texto</span> <span class="text-white/70">texto</span>
+          <!-- Left: Copy -->
+          <div class="lg:col-span-7">
+            <p class="text-xs font-bold tracking-[0.28em] text-white/55 uppercase" data-aos="fade-up">
+              texto
             </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <!-- Title requested -->
+            <h1 class="mt-4 font-orbitron font-extrabold heading text-champagne text-4xl sm:text-5xl md:text-6xl leading-[1.05]" data-aos="fade-up" data-aos-delay="80">
+              TRICHOMES ALCHEMY
+            </h1>
+
+            <!-- Subtitle requested in bullets -->
+            <p class="mt-4 text-white/70 font-extrabold text-lg sm:text-xl" data-aos="fade-up" data-aos-delay="140">
+              Trichomes Alchemy: La Elevación del Extracto.
+            </p>
+
+            <!-- Dynamic slogan -->
+            <p class="mt-3 text-white/65 font-bold max-w-xl" data-aos="fade-up" data-aos-delay="180">
+              Donde la herencia del Rif se encuentra con la precisión molecular.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="240">
+              <!-- Glass CTA -->
               <a href="#showcase"
-                 class="btn-fire rounded-full px-7 py-3 bg-black/70 border border-white/10 font-extrabold tracking-wide inline-flex items-center justify-center gap-2">
-                <span>texto</span>
-                <span aria-hidden="true" class="text-fireGold">➜</span>
+                 class="btn-glass rounded-full px-7 py-3 font-extrabold text-champagne inline-flex items-center justify-center gap-2">
+                <span>Explorar la Galería</span>
+                <span aria-hidden="true" class="text-champagne2">➜</span>
               </a>
 
-              <a href="#info"
-                 class="rounded-full px-7 py-3 bg-white/5 border border-white/10 text-paper font-bold hover:bg-white/10 transition inline-flex items-center justify-center">
-                texto
+              <!-- Secondary CTA -->
+              <a href="#origin"
+                 class="btn-min rounded-full px-7 py-3 font-extrabold text-champagne inline-flex items-center justify-center">
+                Nuestra Genética
               </a>
             </div>
 
-            <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-xs text-white/60 font-bold">
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-fireRed shadow-fire"></span> texto
-              </span>
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-fireOrange shadow-fire"></span> texto
-              </span>
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-fireGold shadow-fire"></span> texto
-              </span>
+            <!-- Key bullets minimal -->
+            <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold text-white/60" data-aos="fade-up" data-aos-delay="280">
+              <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Selección manual</span>
+              <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Secado en frío</span>
+              <span class="px-3 py-2 rounded-full border border-white/10 bg-white/5">Cultivo orgánico</span>
             </div>
           </div>
 
-          <!-- Decorative panel -->
+          <!-- Right: “Showcase” panel (clean lab look) -->
           <div class="lg:col-span-5">
-            <div class="card rounded-3xl p-6 md:p-8 shadow-fire">
+            <div class="card rounded-3xl p-6 md:p-8 shadow-glow" data-aos="fade-left">
               <div class="flex items-center justify-between">
-                <h2 class="font-orbitron font-extrabold tracking-widest text-paper text-sm">texto</h2>
-                <span class="text-xs text-white/70 font-bold">texto</span>
+                <h2 class="font-orbitron font-extrabold heading text-champagne text-sm">texto</h2>
+                <span class="text-xs text-white/60 font-bold">texto</span>
               </div>
+
               <div class="divider my-5"></div>
 
-              <ul class="space-y-4 text-white/80 text-sm font-bold">
-                <li class="flex items-start gap-3">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-fireRed"></span>
-                  <span><b class="text-paper">texto</b> texto</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-fireOrange"></span>
-                  <span><b class="text-paper">texto</b> texto</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-fireGold"></span>
-                  <span><b class="text-paper">texto</b> texto</span>
-                </li>
-              </ul>
-
-              <div class="mt-6 rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-xs text-white/70 font-bold">
-                texto
+              <div class="space-y-4 text-white/70 font-bold text-sm">
+                <div class="flex items-start gap-3">
+                  <span class="mt-2 h-2 w-2 rounded-full bg-champagne"></span>
+                  <p><span class="text-champagne">texto</span> texto</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="mt-2 h-2 w-2 rounded-full bg-champagne2"></span>
+                  <p><span class="text-champagne">texto</span> texto</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="mt-2 h-2 w-2 rounded-full bg-gold"></span>
+                  <p><span class="text-champagne">texto</span> texto</p>
+                </div>
               </div>
 
-              <!-- optional tiny accent bar -->
-              <div class="mt-5 h-1 w-full rounded-full"
-                   style="background:linear-gradient(90deg,#D31410,#DE5520,#ECC563,#005731); opacity:.85;"></div>
+              <!-- Removed any green gradient bars; keep neutral champagne line only -->
+              <div class="mt-6 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-xs text-white/60 font-bold">
+                texto
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Scroll hint -->
-        <div class="absolute left-1/2 -translate-x-1/2 bottom-8 text-white/60 text-xs tracking-widest font-orbitron font-extrabold">
-          <a href="#showcase" class="inline-flex flex-col items-center gap-2 hover:text-paper transition">
-            <span>SCROLL</span>
-            <span class="h-8 w-[2px] bg-gradient-to-b from-white/50 to-transparent"></span>
+        <!-- Scroll hint (minimal) -->
+        <div class="mt-14 flex justify-center text-white/50 text-xs font-bold tracking-[0.25em] uppercase">
+          <a href="#origin" class="hover:text-champagne transition inline-flex items-center gap-3">
+            <span>Scroll</span>
+            <span class="h-[1px] w-16 bg-white/25"></span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-      SHOWCASE
+      The Origin (Terroir)
     ========================================================== -->
-    <section id="showcase" class="relative py-20">
-      <div class="mx-auto max-w-6xl px-4 layer-top">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <div>
-            <h2 class="font-orbitron font-extrabold text-2xl md:text-3xl tracking-widest" data-aos="fade-up">
-              texto
-            </h2>
-            <p class="mt-3 text-white/80 max-w-2xl font-bold" data-aos="fade-up" data-aos-delay="80">
-              texto
-            </p>
-          </div>
-
-          <a href="#contact"
-             class="rounded-full px-6 py-3 bg-white/5 border border-white/10 text-paper font-bold hover:bg-white/10 transition"
-             data-aos="fade-left">
-            texto
-          </a>
-        </div>
-
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-
-          <!-- Card 5 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-
-          <!-- Card 6 -->
-          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <img class="img-zoom h-full w-full object-cover" src="texto" alt="texto" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-              <span class="absolute top-4 left-4 text-[11px] font-orbitron font-extrabold tracking-widest bg-black/55 border border-white/10 px-3 py-1 rounded-full">
-                texto
-              </span>
-            </div>
-            <div class="p-5">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 font-bold">texto</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-      INFO
-    ========================================================== -->
-    <section id="info" class="relative py-20">
+    <section id="origin" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
 
         <div class="grid lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-5" data-aos="fade-right">
-            <h2 class="font-orbitron font-extrabold text-2xl md:text-3xl tracking-widest">texto</h2>
-            <p class="mt-4 text-white/80 leading-relaxed font-bold">texto</p>
+          <div class="lg:col-span-5" data-aos="fade-up">
+            <h2 class="font-orbitron font-extrabold heading text-champagne text-2xl md:text-3xl">
+              El Legado de las Montañas.
+            </h2>
+            <p class="mt-4 text-white/70 font-bold leading-relaxed">
+              No es solo hachís; es el resultado de siglos de tradición en las cumbres de Marruecos,
+              seleccionando solo los tricomas que cuentan una historia de sol, tierra y altitud.
+            </p>
 
             <div class="mt-6 flex flex-wrap gap-2">
-              <span class="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-paper font-bold">texto</span>
-              <span class="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-paper font-bold">texto</span>
-              <span class="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-paper font-bold">texto</span>
-              <span class="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-paper font-bold">texto</span>
-              <span class="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-paper font-bold">texto</span>
+              <span class="text-xs px-3 py-2 rounded-full border border-white/10 bg-white/5 text-champagne font-bold">Selección manual</span>
+              <span class="text-xs px-3 py-2 rounded-full border border-white/10 bg-white/5 text-champagne font-bold">Secado en frío</span>
+              <span class="text-xs px-3 py-2 rounded-full border border-white/10 bg-white/5 text-champagne font-bold">Cultivo orgánico</span>
             </div>
           </div>
 
           <div class="lg:col-span-7 grid md:grid-cols-2 gap-6">
             <div class="card rounded-3xl p-6" data-aos="fade-up">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 leading-relaxed font-bold">texto</p>
+              <h3 class="font-extrabold text-champagne">texto</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
             </div>
 
             <div class="card rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 leading-relaxed font-bold">texto</p>
+              <h3 class="font-extrabold text-champagne">texto</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
             </div>
 
             <div class="card rounded-3xl p-6" data-aos="fade-up">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 leading-relaxed font-bold">texto</p>
+              <h3 class="font-extrabold text-champagne">texto</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
             </div>
 
             <div class="card rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80">
-              <h3 class="font-extrabold">texto</h3>
-              <p class="mt-2 text-sm text-white/75 leading-relaxed font-bold">texto</p>
+              <h3 class="font-extrabold text-champagne">texto</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
             </div>
           </div>
         </div>
@@ -463,32 +346,144 @@
     </section>
 
     <!-- =========================================================
-      CONTACT
+      The Alchemy (clean lab section)
     ========================================================== -->
-    <section id="contact" class="relative py-20">
+    <section id="alchemy" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
-        <div class="card rounded-3xl p-8 md:p-12 shadow-fireStrong" data-aos="zoom-in">
-          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            <div>
-              <h2 class="font-orbitron font-extrabold text-2xl md:text-3xl tracking-widest">texto</h2>
-              <p class="mt-3 text-white/80 max-w-2xl font-bold">texto</p>
-              <p class="mt-2 text-white/60 text-sm font-bold">texto</p>
+        <div class="divider mb-10"></div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-5" data-aos="fade-up">
+            <h2 class="font-orbitron font-extrabold heading text-champagne text-2xl md:text-3xl">
+              Ciencia en cada Micra.
+            </h2>
+            <p class="mt-4 text-white/70 font-bold leading-relaxed">
+              Transformando resina bruta en oro alquímico.
+            </p>
+            <p class="mt-2 text-white/60 font-bold text-sm">
+              Explicación visual de métodos de filtrado (Dry Sift, Static Tech). Estética limpia: laboratorio de alta gama.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 grid md:grid-cols-2 gap-6">
+            <div class="card rounded-3xl p-6" data-aos="fade-up">
+              <h3 class="font-extrabold text-champagne">Dry Sift</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
+              <div class="mt-4 h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-2/3" style="background: linear-gradient(90deg, rgba(231,211,168,.25), rgba(201,166,90,.28));"></div>
+              </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <a href="#home" class="rounded-full px-7 py-3 bg-white/5 border border-white/10 text-paper font-bold hover:bg-white/10 transition text-center">
-                texto
-              </a>
-              <a href="mailto:texto"
-                 class="btn-fire rounded-full px-7 py-3 bg-black/70 border border-white/10 font-extrabold tracking-wide text-center">
-                texto
-              </a>
+            <div class="card rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80">
+              <h3 class="font-extrabold text-champagne">Static Tech</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
+              <div class="mt-4 h-1 rounded-full bg-white/10 overflow-hidden">
+                <div class="h-full w-3/4" style="background: linear-gradient(90deg, rgba(231,211,168,.25), rgba(201,166,90,.28));"></div>
+              </div>
+            </div>
+
+            <div class="card rounded-3xl p-6" data-aos="fade-up">
+              <h3 class="font-extrabold text-champagne">Filtrado 90u</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
+            </div>
+
+            <div class="card rounded-3xl p-6" data-aos="fade-up" data-aos-delay="80">
+              <h3 class="font-extrabold text-champagne">Filtrado 120u</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">texto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+      Showcase / Galería Digital (categories)
+    ========================================================== -->
+    <section id="showcase" class="py-20">
+      <div class="mx-auto max-w-6xl px-4 layer-top">
+        <div class="divider mb-10"></div>
+
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div data-aos="fade-up">
+            <h2 class="font-orbitron font-extrabold heading text-champagne text-2xl md:text-3xl">
+              Showcase / Galería Digital
+            </h2>
+            <p class="mt-3 text-white/70 font-bold max-w-2xl">
+              texto
+            </p>
+          </div>
+
+          <div class="flex gap-3" data-aos="fade-left">
+            <a href="#showcase" class="btn-glass rounded-full px-5 py-2.5 font-extrabold text-champagne">texto</a>
+            <a href="#contact" class="btn-min rounded-full px-5 py-2.5 font-extrabold text-champagne">texto</a>
+          </div>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <!-- A -->
+          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up">
+            <div class="p-6">
+              <h3 class="font-extrabold text-champagne">Ancestral Gold</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">
+                Hachís tradicional de alta gama.
+              </p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl border border-white/10 bg-black/35 overflow-hidden flex items-center justify-center text-white/40 font-bold">
+                <img src="texto" alt="texto" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <!-- B -->
+          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+            <div class="p-6">
+              <h3 class="font-extrabold text-champagne">Molecular Sift</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">
+                Filtrados 90u, 120u con técnica de estática.
+              </p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl border border-white/10 bg-black/35 overflow-hidden flex items-center justify-center text-white/40 font-bold">
+                <img src="texto" alt="texto" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <!-- C -->
+          <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+            <div class="p-6">
+              <h3 class="font-extrabold text-champagne">The Limited Alchemist</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">
+                Ediciones especiales o colaboraciones.
+              </p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl border border-white/10 bg-black/35 overflow-hidden flex items-center justify-center text-white/40 font-bold">
+                <img src="texto" alt="texto" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+      Footer
+    ========================================================== -->
+    <section id="contact" class="py-20">
+      <div class="mx-auto max-w-6xl px-4 layer-top">
+        <div class="card rounded-3xl p-8 md:p-12" data-aos="fade-up">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <p class="text-white/70 font-bold">Trichomes Alchemy: El arte de la pureza.</p>
+              <p class="mt-2 text-white/55 text-sm font-bold">texto</p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href="texto" class="btn-min rounded-full px-5 py-2.5 font-extrabold text-champagne">Trazabilidad</a>
+              <a href="texto" class="btn-min rounded-full px-5 py-2.5 font-extrabold text-champagne">Filosofía</a>
+              <a href="mailto:texto" class="btn-glass rounded-full px-5 py-2.5 font-extrabold text-champagne">Contacto Exclusivo</a>
             </div>
           </div>
         </div>
 
-        <footer class="mt-10 text-center text-xs text-white/60 font-bold">
-          <p>© <span id="year"></span> texto</p>
+        <footer class="mt-10 text-center text-xs text-white/45 font-bold">
+          <p>© <span id="year"></span> TRICHOMES ALCHEMY</p>
         </footer>
       </div>
     </section>
@@ -496,7 +491,6 @@
 
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
   <script>
     AOS.init({
       once: true,
@@ -504,53 +498,7 @@
       easing: "ease-out-cubic",
       offset: 60
     });
-
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const hero = document.getElementById("hero");
-    const logo = document.getElementById("heroLogo");
-    const topBar = document.getElementById("topBar");
-
-    let ticking = false;
-    function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
-
-    function onScroll() {
-      if (!hero || !logo) return;
-
-      const heroRect = hero.getBoundingClientRect();
-      const heroHeight = Math.max(heroRect.height, 1);
-      const scrolled = clamp((0 - heroRect.top) / (heroHeight * 0.9), 0, 1);
-
-      const scale = 1 - (scrolled * 0.45);
-      const opacity = 1 - (scrolled * 0.90);
-
-      logo.style.transform = `scale(${scale})`;
-      logo.style.opacity = `${opacity}`;
-
-      logo.style.filter = scrolled < 0.2
-        ? "drop-shadow(0 0 18px rgba(211,20,16,.18)) drop-shadow(0 0 30px rgba(222,85,32,.20)) drop-shadow(0 0 46px rgba(236,197,99,.12))"
-        : "drop-shadow(0 0 12px rgba(211,20,16,.12)) drop-shadow(0 0 22px rgba(222,85,32,.12)) drop-shadow(0 0 34px rgba(236,197,99,.08))";
-
-      if (scrolled > 0.35) {
-        topBar.style.transform = "translateY(0)";
-      } else {
-        topBar.style.transform = "translateY(-100%)";
-      }
-    }
-
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          onScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener("scroll", requestTick, { passive: true });
-    window.addEventListener("resize", requestTick);
-    onScroll();
   </script>
 </body>
 </html>
