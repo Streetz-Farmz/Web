@@ -64,7 +64,6 @@
     html { scroll-behavior: smooth; }
     body { background: #050507; }
 
-    /* Dark + champagne halo (clean) */
     .bg-lab {
       background:
         radial-gradient(900px 520px at 20% 10%, rgba(231,211,168,.10), transparent 60%),
@@ -74,7 +73,6 @@
       overflow: hidden;
     }
 
-    /* Subtle grain */
     .noise {
       position: absolute;
       inset: 0;
@@ -85,7 +83,6 @@
       z-index: 0;
     }
 
-    /* Lab grid (very subtle) */
     .gridlines::before {
       content: "";
       position: absolute;
@@ -107,7 +104,6 @@
       text-transform: uppercase;
     }
 
-    /* Glass button */
     .btn-glass {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(231,211,168,0.25);
@@ -123,7 +119,6 @@
       box-shadow: 0 16px 54px rgba(0,0,0,.55), 0 0 28px rgba(231,211,168,.08);
     }
 
-    /* Secondary button */
     .btn-min {
       border: 1px solid rgba(231,211,168,0.18);
       background: rgba(255,255,255,0.03);
@@ -137,7 +132,6 @@
       transform: translateY(-1px);
     }
 
-    /* Cards */
     .card {
       background: rgba(255,255,255,.03);
       border: 1px solid rgba(231,211,168,0.14);
@@ -164,7 +158,6 @@
       box-shadow: 0 14px 60px rgba(0,0,0,.55), 0 0 38px rgba(231,211,168,.08);
     }
 
-    /* Minimal “micron” pill */
     .pill {
       border: 1px solid rgba(231,211,168,0.18);
       background: rgba(255,255,255,0.03);
@@ -176,18 +169,12 @@
 
 <body class="text-white font-inter">
 
-  <!-- HEADER -->
+  <!-- HEADER (logo removed as requested) -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-black/45 backdrop-blur-md px-4 py-3">
 
-        <!-- Brand (Logo + Wordmark) -->
         <a href="#home" class="flex items-center gap-3">
-          <!-- Street Farmz Logo -->
-          <div class="h-10 w-10 rounded-xl overflow-hidden logo-ring flex items-center justify-center">
-            <img src="./logo.png" alt="Street Farmz logo" class="h-10 w-10 object-cover" />
-          </div>
-
           <div class="leading-tight">
             <div class="font-orbitron font-extrabold heading text-[11px] text-champagne">TRICHOMES ALCHEMY</div>
             <div class="text-[11px] font-bold text-white/55">Street Farmz — Rif Heritage Lab</div>
@@ -223,7 +210,19 @@
               <span>Rif Terroir • Molecular Precision • Limited Drops</span>
             </div>
 
-            <h1 class="mt-6 font-orbitron font-extrabold heading text-champagne text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
+            <!-- LOGO moved above title (as requested) -->
+            <div class="mt-8 mb-5 flex justify-center lg:justify-start">
+              <div class="logo-ring rounded-3xl p-3">
+                <img
+                  src="./logo.png"
+                  alt="Street Farmz logo"
+                  class="h-24 w-24 sm:h-28 sm:w-28 object-cover rounded-2xl"
+                  draggable="false"
+                />
+              </div>
+            </div>
+
+            <h1 class="font-orbitron font-extrabold heading text-champagne text-4xl sm:text-5xl md:text-6xl leading-[1.05]">
               TRICHOMES ALCHEMY
             </h1>
 
@@ -287,7 +286,7 @@
                 Traceability available per drop. Request a batch code in Contact.
               </div>
 
-              <div class="mt-5 flex gap-2">
+              <div class="mt-5 flex gap-2 flex-wrap">
                 <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Clean Lab Aesthetic</span>
                 <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Minimal • Premium</span>
               </div>
@@ -381,7 +380,7 @@
       </div>
     </section>
 
-    <!-- GENETICS (requested CTA target) -->
+    <!-- GENETICS -->
     <section id="genetics" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
@@ -504,7 +503,6 @@
           </div>
         </div>
 
-        <!-- Clean lab “spec strip” (no green) -->
         <div class="mt-10 card rounded-3xl p-6" data-aos="fade-up">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
@@ -524,7 +522,7 @@
       </div>
     </section>
 
-    <!-- SHOWCASE / GALLERY -->
+    <!-- SHOWCASE -->
     <section id="showcase" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
@@ -545,9 +543,7 @@
           </div>
         </div>
 
-        <!-- Category Cards -->
         <div class="mt-10 grid lg:grid-cols-3 gap-6">
-          <!-- A -->
           <article class="card rounded-3xl overflow-hidden" data-aos="fade-up">
             <div class="p-6">
               <div class="text-xs font-extrabold text-champagne heading">Category A</div>
@@ -555,20 +551,12 @@
               <p class="mt-2 text-sm text-white/70 font-bold">
                 Hachís tradicional de alta gama. Terroir first, textura cuidada, perfil clásico.
               </p>
-
               <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
                 <img src="texto" alt="Ancestral Gold preview" class="w-full h-full object-cover opacity-90" loading="lazy">
-              </div>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Heritage</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Warm spice</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Premium cure</span>
               </div>
             </div>
           </article>
 
-          <!-- B -->
           <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
             <div class="p-6">
               <div class="text-xs font-extrabold text-champagne heading">Category B</div>
@@ -576,20 +564,12 @@
               <p class="mt-2 text-sm text-white/70 font-bold">
                 Filtrados 90u y 120u con técnica de estática. Limpieza visual, refinamiento, consistencia.
               </p>
-
               <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
                 <img src="texto" alt="Molecular Sift preview" class="w-full h-full object-cover opacity-90" loading="lazy">
-              </div>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">90u / 120u</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Static tech</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Clean melt</span>
               </div>
             </div>
           </article>
 
-          <!-- C -->
           <article class="card rounded-3xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
             <div class="p-6">
               <div class="text-xs font-extrabold text-champagne heading">Category C</div>
@@ -597,57 +577,11 @@
               <p class="mt-2 text-sm text-white/70 font-bold">
                 Ediciones especiales y colaboraciones. Drops limitados con trazabilidad y notas de lote.
               </p>
-
               <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
                 <img src="texto" alt="Limited Alchemist preview" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
-
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Limited</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Collabs</span>
-                <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Batch notes</span>
-              </div>
             </div>
           </article>
-        </div>
-
-        <!-- Mini Catalog (more developed) -->
-        <div class="mt-10 grid md:grid-cols-2 gap-6" data-aos="fade-up">
-          <div class="card rounded-3xl p-6">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <div class="text-xs font-extrabold text-champagne heading">Featured Drop</div>
-                <div class="mt-1 font-extrabold text-champagne text-lg">Ancestral Gold • Batch 01</div>
-              </div>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Disponible: Limited</span>
-            </div>
-            <p class="mt-3 text-sm font-bold text-white/70">
-              Notas: especias cálidas, tierra seca, final dulce. Textura: compacta, curado controlado.
-            </p>
-            <div class="mt-4 flex gap-2 flex-wrap">
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Heritage profile</span>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Cold cure</span>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Clean visual</span>
-            </div>
-          </div>
-
-          <div class="card rounded-3xl p-6">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <div class="text-xs font-extrabold text-champagne heading">Featured Drop</div>
-                <div class="mt-1 font-extrabold text-champagne text-lg">Molecular Sift • 90u Select</div>
-              </div>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-white/60">Grade: 90u</span>
-            </div>
-            <p class="mt-3 text-sm font-bold text-white/70">
-              Limpieza visual elevada con static refinement. Perfil: resinoso, dulce, especiado.
-            </p>
-            <div class="mt-4 flex gap-2 flex-wrap">
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Static tech</span>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Micron grade</span>
-              <span class="pill rounded-full px-3 py-2 text-xs font-bold text-champagne">Premium melt</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -663,8 +597,8 @@
               Trazabilidad
             </h2>
             <p class="mt-4 text-white/70 font-bold leading-relaxed">
-              Cada drop puede incluir notas del lote: micron grade, método, curado y perfil aromático. Transparencia sin ruido:
-              un estándar premium.
+              Cada drop puede incluir notas del lote: micron grade, método, curado y perfil aromático.
+              Transparencia sin ruido: un estándar premium.
             </p>
           </div>
 
@@ -686,25 +620,16 @@
       </div>
     </section>
 
-    <!-- FOOTER / CONTACT -->
+    <!-- CONTACT / FOOTER -->
     <section id="contact" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="card rounded-3xl p-8 md:p-12" data-aos="fade-up">
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-
-            <div class="flex items-start gap-4">
-              <div class="h-14 w-14 rounded-2xl overflow-hidden logo-ring">
-                <img src="./logo.png" alt="Street Farmz logo" class="h-14 w-14 object-cover" />
-              </div>
-
-              <div>
-                <p class="text-white/70 font-bold">
-                  “Trichomes Alchemy: El arte de la pureza.”
-                </p>
-                <p class="mt-2 text-white/55 text-sm font-bold">
-                  Para solicitudes exclusivas, trazabilidad o colaboraciones: contacta por canal privado.
-                </p>
-              </div>
+            <div>
+              <p class="text-white/70 font-bold">“Trichomes Alchemy: El arte de la pureza.”</p>
+              <p class="mt-2 text-white/55 text-sm font-bold">
+                Para solicitudes exclusivas, trazabilidad o colaboraciones: contacta por canal privado.
+              </p>
             </div>
 
             <div class="flex flex-wrap gap-3">
@@ -731,3 +656,5 @@
   </script>
 </body>
 </html>
+
+
