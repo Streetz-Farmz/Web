@@ -4,20 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Trichomes Alchemy — Street Farmz | Visual Gallery</title>
-  <meta name="description" content="Trichomes Alchemy by Street Farmz — a curated visual gallery where Rif heritage meets molecular precision. Terroir, process, and collections." />
+  <title>Trichomes Alchemy — Street Farmz</title>
+  <meta name="description" content="Trichomes Alchemy by Street Farmz — a visual gallery inspired by Rif heritage, modern refinement, and curated resin culture. No sales. Just passion & education." />
 
-  <!-- If you want it NOT indexed by Google, keep these -->
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="googlebot" content="noindex,nofollow" />
-
+  <!-- Privacy / indexing (keeps it out of Google as much as possible) -->
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet" />
   <meta name="theme-color" content="#070608" />
-  <meta name="referrer" content="no-referrer" />
 
-  <!-- Social (keep as placeholders if you want) -->
+  <!-- Social (fill with your real URL later) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Trichomes Alchemy — Street Farmz | Visual Gallery" />
-  <meta property="og:description" content="A curated visual gallery where Rif heritage meets molecular precision." />
+  <meta property="og:title" content="Trichomes Alchemy — Street Farmz" />
+  <meta property="og:description" content="A refined visual gallery inspired by Rif heritage and modern precision. No sales. Just culture." />
   <meta property="og:url" content="texto" />
   <meta property="og:image" content="texto" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -63,7 +61,7 @@
     html { scroll-behavior: smooth; }
     body { background: #070608; }
 
-    /* Brand background: fire/orange/amber on black */
+    /* Background inspired by the logo: red/orange/amber on black */
     .bg-brand {
       background:
         radial-gradient(900px 520px at 18% 8%, rgba(255,106,0,.14), transparent 60%),
@@ -85,7 +83,7 @@
       z-index: 0;
     }
 
-    /* Thin grid */
+    /* Very light grid */
     .gridlines::before {
       content: "";
       position: absolute;
@@ -101,11 +99,7 @@
     }
 
     .layer-top { position: relative; z-index: 10; }
-
-    .heading {
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-    }
+    .heading { letter-spacing: 0.10em; text-transform: uppercase; }
 
     .card {
       background: rgba(255,255,255,.03);
@@ -142,105 +136,88 @@
       opacity: .95;
     }
 
-    /* Top toolbar (Browse Categories + Search) */
-    .toolbar {
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.40);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 18px 70px rgba(0,0,0,.55);
+    /* Primary CTA */
+    .btn-brand {
+      background: linear-gradient(90deg, rgba(255,59,31,.35), rgba(255,106,0,.28), rgba(255,176,0,.20));
+      border: 1px solid rgba(255,176,0,0.28);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 14px 44px rgba(0,0,0,.55), 0 0 28px rgba(255,106,0,.12);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
     }
-
-    /* Browse button look (premium fire) */
-    .browse-btn {
-      background: linear-gradient(180deg, rgba(255,106,0,.20), rgba(255,59,31,.14));
-      border: 1px solid rgba(255,176,0,.20);
-      transition: transform 180ms ease, border-color 180ms ease, filter 180ms ease;
-    }
-    .browse-btn:hover {
+    .btn-brand:hover {
       transform: translateY(-1px);
-      border-color: rgba(255,211,90,0.35);
+      border-color: rgba(255,211,90,0.40);
+      box-shadow: 0 18px 58px rgba(0,0,0,.62), 0 0 36px rgba(255,106,0,.18);
       filter: saturate(1.1);
     }
 
-    /* Search input */
-    .search-input {
+    .btn-ghost {
+      border: 1px solid rgba(255,176,0,0.18);
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,176,0,0.16);
-      outline: none;
-    }
-    .search-input:focus {
-      border-color: rgba(255,211,90,0.35);
-      box-shadow: 0 0 0 4px rgba(255,176,0,0.08);
-    }
-
-    /* Logo glow */
-    .logo-glow {
-      filter: drop-shadow(0 0 20px rgba(255,106,0,.18)) drop-shadow(0 0 48px rgba(255,59,31,.10));
-    }
-
-    /* Header button as image */
-    .cta-img {
-      border: 1px solid rgba(255,211,90,0.22);
-      background: rgba(0,0,0,0.35);
-      border-radius: 999px;
-      padding: 8px 12px;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      transition: transform 180ms ease, border-color 180ms ease;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
     }
-    .cta-img:hover {
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,176,0,0.30);
       transform: translateY(-1px);
-      border-color: rgba(255,211,90,0.38);
     }
 
-    /* Smoky footer */
-    .smoke {
-      background:
-        radial-gradient(800px 420px at 50% 40%, rgba(255,255,255,0.06), transparent 60%),
-        radial-gradient(900px 520px at 30% 60%, rgba(255,106,0,0.10), transparent 60%),
-        radial-gradient(900px 520px at 70% 65%, rgba(255,59,31,0.10), transparent 60%),
-        linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+    /* “Browse Categories” dropdown styling */
+    details.dropdown > summary {
+      list-style: none;
+      cursor: pointer;
     }
+    details.dropdown > summary::-webkit-details-marker { display:none; }
 
-    /* Dropdown panel */
     .dropdown-panel {
-      background: rgba(10,8,10,0.92);
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      width: min(320px, 92vw);
+      border-radius: 18px;
       border: 1px solid rgba(255,176,0,0.18);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(10,8,10,0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      overflow: hidden;
+      z-index: 60;
     }
 
-    /* Category item */
-    .cat-item {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
-      transition: border-color 150ms ease, transform 150ms ease, background 150ms ease;
+    .drop-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      color: rgba(255,255,255,.78);
+      font-weight: 800;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
-    .cat-item:hover {
-      border-color: rgba(255,211,90,0.25);
+    .drop-item:hover {
       background: rgba(255,255,255,0.04);
-      transform: translateY(-1px);
+      color: rgba(255,211,90,0.95);
     }
 
-    /* Gallery image placeholder */
-    .ph {
-      background:
-        radial-gradient(420px 220px at 30% 30%, rgba(255,106,0,0.14), transparent 60%),
-        radial-gradient(420px 220px at 70% 70%, rgba(255,59,31,0.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,176,0,0.12);
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,176,0,.95), rgba(255,59,31,.70));
+      box-shadow: 0 0 14px rgba(255,106,0,.20);
+      flex: 0 0 auto;
     }
   </style>
 </head>
 
 <body class="text-white font-inter">
-
-  <!-- HEADER -->
+  <!-- TOP NAV -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="mx-auto max-w-6xl px-4">
-      <div class="mt-3 flex items-center justify-between rounded-2xl border border-white/10 bg-black/45 backdrop-blur-md px-4 py-3">
+      <div class="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/45 backdrop-blur-md px-4 py-3">
         <a href="#home" class="flex items-center gap-3">
           <div class="leading-tight">
             <div class="font-display heading text-[16px] text-sun">TRICHOMES ALCHEMY</div>
@@ -248,88 +225,88 @@
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70 font-bold">
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70 font-extrabold">
           <a class="hover:text-sun transition" href="#home">Home</a>
           <a class="hover:text-sun transition" href="#about">About us</a>
           <a class="hover:text-sun transition" href="#gallery">Gallery</a>
         </nav>
 
-        <!-- PNG button (replaces text "Ver Galería") -->
-        <a href="#gallery" class="cta-img inline-flex items-center justify-center">
-          <!-- Put your button PNG here -->
-          <img src="./ver-galeria.png" alt="View Gallery" class="h-6 w-auto select-none" draggable="false">
+        <!-- PNG button (small) -->
+        <a href="#gallery" class="shrink-0 rounded-full border border-white/10 bg-black/35 backdrop-blur-md px-3 py-2 hover:border-white/20 transition">
+          <img
+            src="./STREETZFARM_LETTERING.png"
+            alt="View Gallery"
+            class="h-6 w-auto select-none"
+            draggable="false"
+          />
         </a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main id="home" class="bg-brand gridlines min-h-screen relative">
     <div class="noise"></div>
 
     <!-- HERO -->
-    <section class="pt-28 pb-10">
-      <div class="mx-auto max-w-6xl px-4 layer-top">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
+    <section class="min-h-screen pt-28 pb-16 flex items-start">
+      <div class="mx-auto max-w-6xl px-4 w-full layer-top">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
 
-          <!-- Left -->
+          <!-- LEFT -->
           <div class="lg:col-span-7" data-aos="fade-up">
-
-            <!-- BIG LOGO (replaces white logo, bigger) -->
-            <div class="mt-2 mb-6">
-              <!-- Put your Street Farmz logo PNG here -->
+            <!-- MAIN LOGO (maroc) -->
+            <div class="flex justify-center lg:justify-start">
               <img
-                src="./streetzfarmz-logo.png"
+                src="./STREETZFARM_LOGO_MAROC.png"
                 alt="Street Farmz logo"
-                class="h-28 sm:h-32 md:h-36 w-auto object-contain select-none logo-glow"
+                class="w-[180px] sm:w-[220px] md:w-[260px] h-auto select-none drop-shadow-[0_0_28px_rgba(255,106,0,0.18)]"
                 draggable="false"
               />
             </div>
 
-            <div class="w-44 mb-4 accent-line"></div>
+            <div class="mt-8 w-44 mx-auto lg:mx-0 accent-line"></div>
 
-            <h1 class="font-display heading text-sun text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
+            <h1 class="mt-6 font-display heading text-sun text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
               TRICHOMES<br/>ALCHEMY
             </h1>
 
-            <p class="mt-4 text-white/85 font-extrabold text-lg sm:text-xl">
+            <p class="mt-4 text-white/80 font-extrabold text-lg sm:text-xl">
               The elevation of the extract.
             </p>
 
-            <p class="mt-3 text-white/65 font-bold max-w-2xl leading-relaxed">
-              This is a visual space for people who love resin culture: Rif roots, modern technique, and clean presentation.
-              No hype — just textures, details, and the craft behind each style.
+            <p class="mt-3 text-white/65 font-bold max-w-2xl">
+              A clean, curated visual space for resin lovers — inspired by Rif heritage and modern precision.
+              No shop vibes, no checkout energy… just culture, craft, and respect for the plant.
             </p>
 
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#gallery"
-                 class="rounded-full px-7 py-3 font-extrabold text-white inline-flex items-center justify-center gap-2"
-                 style="background:linear-gradient(90deg, rgba(255,59,31,.35), rgba(255,106,0,.28), rgba(255,176,0,.20)); border:1px solid rgba(255,176,0,0.28); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); box-shadow:0 14px 44px rgba(0,0,0,.55), 0 0 28px rgba(255,106,0,.12);">
+                 class="btn-brand rounded-full px-7 py-3 font-extrabold text-white inline-flex items-center justify-center gap-2">
                 <span>Explore the Gallery</span>
                 <span aria-hidden="true" class="text-white/90">➜</span>
               </a>
 
               <a href="#about"
-                 class="rounded-full px-7 py-3 font-extrabold text-sun inline-flex items-center justify-center"
-                 style="border:1px solid rgba(255,176,0,0.18); background:rgba(255,255,255,0.03); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);">
+                 class="btn-ghost rounded-full px-7 py-3 font-extrabold text-sun inline-flex items-center justify-center">
                 About us
               </a>
             </div>
 
-            <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold text-white/60">
+            <div class="mt-10 flex flex-wrap gap-3 text-xs font-extrabold text-white/60">
               <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Hand selection</span>
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Cold handling</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Cold cure</span>
               <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Organic mindset</span>
               <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Micron focus</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Static refinement</span>
             </div>
           </div>
 
-          <!-- Right: cleaner showcase card (removed “red marked” extras) -->
+          <!-- RIGHT (clean card, no “private preview” bar) -->
           <div class="lg:col-span-5" data-aos="fade-left">
             <div class="card rounded-3xl p-6 md:p-8 shadow-glow">
               <div class="flex items-center justify-between">
-                <h2 class="font-display heading text-sun text-xl">Curated Styles</h2>
-                <span class="text-xs text-white/60 font-bold">Visual-only</span>
+                <h2 class="font-display heading text-sun text-xl">Curated Focus</h2>
+                <span class="text-xs text-white/60 font-extrabold">Visual only</span>
               </div>
 
               <div class="divider my-5"></div>
@@ -337,26 +314,32 @@
               <div class="space-y-4 text-white/80 font-bold text-sm">
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-amber"></span>
-                  <p><span class="text-sun">Drysift:</span> classic texture, warm notes, clean finish.</p>
+                  <p><span class="text-sun">Origin:</span> Rif-inspired culture & terroir storytelling.</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-flame"></span>
-                  <p><span class="text-sun">Frozen:</span> sharper aroma, bright resin expression.</p>
+                  <p><span class="text-sun">Process:</span> From sift to static — clean visuals, tight details.</p>
                 </div>
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-ember"></span>
-                  <p><span class="text-sun">Static / WPFF:</span> detail-driven, melt-focused, premium look.</p>
+                  <p><span class="text-sun">Gallery:</span> Frozen, Static, Dry Sift, and WPFF highlights.</p>
                 </div>
               </div>
 
               <div class="mt-6 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-xs text-white/65 font-bold">
-                Everything here is shared for visual appreciation and culture — keep it respectful and responsible.
+                Friendly note: this is an educational / visual showcase. No sales, no orders, no shipping talk.
+              </div>
+
+              <div class="mt-5 flex gap-2 flex-wrap">
+                <span class="pill rounded-full px-3 py-2 text-xs font-extrabold text-sun">Dark • Fire • Gold</span>
+                <span class="pill rounded-full px-3 py-2 text-xs font-extrabold text-sun">Clean showcase UI</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-12 flex justify-center text-white/55 text-xs font-bold tracking-[0.25em] uppercase">
+        <!-- SCROLL HINT -->
+        <div class="mt-14 flex justify-center text-white/55 text-xs font-extrabold tracking-[0.25em] uppercase">
           <a href="#about" class="hover:text-sun transition inline-flex items-center gap-3">
             <span>Scroll</span>
             <span class="h-[1px] w-16 bg-white/25"></span>
@@ -365,44 +348,59 @@
       </div>
     </section>
 
-    <!-- HOME: Browse Categories + Search (like your screenshots) -->
-    <section class="pb-14">
+    <!-- BROWSE + SEARCH BAR (fixed layout) -->
+    <section class="pb-10">
       <div class="mx-auto max-w-6xl px-4 layer-top" data-aos="fade-up">
-        <div class="toolbar rounded-2xl p-3 md:p-4">
+        <div class="card rounded-3xl p-4 md:p-5">
           <div class="flex flex-col md:flex-row gap-3 md:items-center">
-
-            <!-- Browse Categories dropdown -->
-            <div class="relative md:w-[280px]">
-              <button id="browseBtn"
-                      class="browse-btn w-full rounded-xl px-4 py-3 font-extrabold text-white flex items-center justify-between gap-3">
-                <span class="inline-flex items-center gap-2">
-                  <span class="text-white/80">☰</span>
+            <!-- Browse categories (dropdown) -->
+            <div class="relative">
+              <details class="dropdown">
+                <summary class="btn-brand rounded-2xl px-4 py-3 font-extrabold text-white inline-flex items-center gap-3">
+                  <span class="text-white/95">☰</span>
                   <span class="tracking-wide">BROWSE CATEGORIES</span>
-                </span>
-                <span class="text-white/70">▾</span>
-              </button>
+                  <span class="text-white/80">▾</span>
+                </summary>
 
-              <div id="browseMenu" class="hidden absolute left-0 mt-2 w-full dropdown-panel rounded-2xl p-2">
-                <button class="cat-item w-full rounded-xl px-4 py-3 text-left font-bold text-white/85" data-cat="all">All</button>
-                <button class="cat-item w-full rounded-xl px-4 py-3 text-left font-bold text-white/85" data-cat="frozen">Frozen</button>
-                <button class="cat-item w-full rounded-xl px-4 py-3 text-left font-bold text-white/85" data-cat="static">Static</button>
-                <button class="cat-item w-full rounded-xl px-4 py-3 text-left font-bold text-white/85" data-cat="drysift">Drysift</button>
-                <button class="cat-item w-full rounded-xl px-4 py-3 text-left font-bold text-white/85" data-cat="wpff">WPFF (Water Processed Full Melt Hash)</button>
-              </div>
+                <div class="dropdown-panel">
+                  <a class="drop-item" href="#gallery" data-filter="all"><span class="dot"></span>All</a>
+                  <a class="drop-item" href="#gallery" data-filter="frozen"><span class="dot"></span>Frozen</a>
+                  <a class="drop-item" href="#gallery" data-filter="static"><span class="dot"></span>Static</a>
+                  <a class="drop-item" href="#gallery" data-filter="drysift"><span class="dot"></span>Dry Sift</a>
+                  <a class="drop-item" href="#gallery" data-filter="wpff"><span class="dot"></span>WPFF (Water Processed Full Melt Hash)</a>
+                </div>
+              </details>
             </div>
 
-            <!-- Search (extended) -->
+            <!-- Search (longer, no “select category”) -->
             <div class="flex-1">
-              <div class="flex items-center gap-3 rounded-xl px-4 py-3 search-input">
-                <span class="text-white/55">🔎</span>
-                <input id="searchInput"
-                       type="text"
-                       placeholder="Search within the gallery…"
-                       class="w-full bg-transparent text-white placeholder:text-white/35 font-bold focus:outline-none" />
+              <div class="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md px-4 py-3">
+                <span class="text-white/45">🔎</span>
+                <input
+                  id="searchInput"
+                  type="search"
+                  placeholder="Search the gallery… (e.g. frozen, static, dry sift, wpff)"
+                  class="w-full bg-transparent outline-none text-white/85 placeholder:text-white/35 font-bold"
+                />
               </div>
             </div>
 
+            <!-- Quick select (optional, matches your request list) -->
+            <div class="md:w-[240px]">
+              <select id="categorySelect"
+                      class="w-full rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md px-4 py-3 text-white/85 font-extrabold outline-none">
+                <option value="all">All</option>
+                <option value="frozen">Frozen</option>
+                <option value="static">Static</option>
+                <option value="drysift">Dry Sift</option>
+                <option value="wpff">WPFF</option>
+              </select>
+            </div>
           </div>
+
+          <p class="mt-3 text-xs text-white/50 font-bold">
+            Tip: use the dropdown or the selector to jump through styles. This is a visual/educational space only.
+          </p>
         </div>
       </div>
     </section>
@@ -415,66 +413,49 @@
         <div class="grid lg:grid-cols-12 gap-10 items-start">
           <div class="lg:col-span-5" data-aos="fade-up">
             <h2 class="font-display heading text-sun text-4xl md:text-5xl leading-[0.95]">
-              About<br/>Street Farmz
+              About us
             </h2>
             <p class="mt-4 text-white/70 font-bold leading-relaxed">
-              We’re resin enthusiasts — the kind who pay attention to the small things: texture, clarity, color,
-              and that “micron-level” detail that separates something average from something truly clean.
+              We’re just enthusiasts with a serious love for resin culture — the history, the craft,
+              and the tiny details that make a texture or a melt feel “right”.
             </p>
-
-            <div class="mt-6 grid gap-3">
-              <div class="pill rounded-2xl p-4">
-                <div class="text-xs font-extrabold text-sun heading">Culture first</div>
-                <div class="mt-1 text-sm font-bold text-white/65">
-                  This site is built for appreciation: visuals, process, and style — not hype.
-                </div>
-              </div>
-              <div class="pill rounded-2xl p-4">
-                <div class="text-xs font-extrabold text-sun heading">Responsible vibe</div>
-                <div class="mt-1 text-sm font-bold text-white/65">
-                  Keep it respectful, legal, and mindful of your local rules. Always.
-                </div>
-              </div>
-              <div class="pill rounded-2xl p-4">
-                <div class="text-xs font-extrabold text-sun heading">Detail matters</div>
-                <div class="mt-1 text-sm font-bold text-white/65">
-                  From Rif heritage to modern refinement — we love the craft and the science.
-                </div>
-              </div>
-            </div>
+            <p class="mt-4 text-white/70 font-bold leading-relaxed">
+              This site is a gallery: a way to organize visuals, talk about processes in a chill way,
+              and give respect to the plant without turning it into a storefront.
+            </p>
           </div>
 
           <div class="lg:col-span-7 grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="80">
             <div class="card rounded-3xl p-6">
-              <h3 class="font-extrabold text-sun">Rif Heritage</h3>
+              <h3 class="font-extrabold text-sun">Rif Heritage (inspiration)</h3>
               <p class="mt-2 text-sm text-white/70 font-bold">
-                Mountain tradition, sun, altitude — a story told through resin.
+                Terroir, climate, tradition — the story behind the resin matters.
               </p>
-              <div class="mt-4 text-xs font-bold text-white/55">Terroir • Sun • Altitude</div>
+              <div class="mt-4 text-xs font-extrabold text-white/55">Sun • Soil • Altitude</div>
             </div>
 
             <div class="card rounded-3xl p-6">
-              <h3 class="font-extrabold text-sun">Modern Precision</h3>
+              <h3 class="font-extrabold text-sun">Clean Process Mindset</h3>
               <p class="mt-2 text-sm text-white/70 font-bold">
-                Clean technique, careful handling, and respect for the heads.
+                Dry sift, static refinement, micron focus — clarity and consistency.
               </p>
-              <div class="mt-4 text-xs font-bold text-white/55">Process • Purity • Consistency</div>
+              <div class="mt-4 text-xs font-extrabold text-white/55">Technique • Patience • Detail</div>
+            </div>
+
+            <div class="card rounded-3xl p-6">
+              <h3 class="font-extrabold text-sun">Culture First</h3>
+              <p class="mt-2 text-sm text-white/70 font-bold">
+                No hype needed. We keep it respectful, educational, and visual.
+              </p>
+              <div class="mt-4 text-xs font-extrabold text-white/55">Calm • Honest • Passionate</div>
             </div>
 
             <div class="card rounded-3xl p-6">
               <h3 class="font-extrabold text-sun">Visual Curation</h3>
               <p class="mt-2 text-sm text-white/70 font-bold">
-                A premium look: calm layout, fire palette, and easy browsing.
+                The gallery is organized by styles so it’s easy to explore and compare.
               </p>
-              <div class="mt-4 text-xs font-bold text-white/55">Dark • Fire • Gold</div>
-            </div>
-
-            <div class="card rounded-3xl p-6">
-              <h3 class="font-extrabold text-sun">For the heads</h3>
-              <p class="mt-2 text-sm text-white/70 font-bold">
-                If you notice melt, texture, and cleanliness… you’re in the right place.
-              </p>
-              <div class="mt-4 text-xs font-bold text-white/55">Micron nerds welcome</div>
+              <div class="mt-4 text-xs font-extrabold text-white/55">Frozen • Static • Dry Sift • WPFF</div>
             </div>
           </div>
         </div>
@@ -492,110 +473,170 @@
               Gallery
             </h2>
             <p class="mt-3 text-white/70 font-bold max-w-2xl">
-              Choose a category and browse the visuals. This is a showcase space — clean, simple, and premium.
+              Explore visuals by style. Everything here is for showcase / education — no buying, no ordering, no checkout.
             </p>
           </div>
 
-          <div class="flex gap-3">
-            <button id="clearFilters"
-                    class="rounded-full px-5 py-2.5 font-extrabold text-sun"
-                    style="border:1px solid rgba(255,176,0,0.18); background:rgba(255,255,255,0.03); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);">
-              Clear filters
-            </button>
+          <a href="#home" class="btn-ghost rounded-full px-5 py-2.5 font-extrabold text-sun">
+            Back to top
+          </a>
+        </div>
+
+        <!-- Category tiles (like your screenshot section) -->
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+          <div class="card rounded-3xl overflow-hidden">
+            <div class="p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Dry Sift" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+              <div class="mt-4 text-center">
+                <div class="font-extrabold text-sun">Dry Sift</div>
+                <div class="text-xs font-bold text-white/55 mt-1">Classic separation • clean structure</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card rounded-3xl overflow-hidden">
+            <div class="p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Frozen" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+              <div class="mt-4 text-center">
+                <div class="font-extrabold text-sun">Frozen</div>
+                <div class="text-xs font-bold text-white/55 mt-1">Cold approach • crisp profiles</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card rounded-3xl overflow-hidden">
+            <div class="p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Static" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+              <div class="mt-4 text-center">
+                <div class="font-extrabold text-sun">Static</div>
+                <div class="text-xs font-bold text-white/55 mt-1">Refinement • visual cleanliness</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card rounded-3xl overflow-hidden">
+            <div class="p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="WPFF" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+              <div class="mt-4 text-center">
+                <div class="font-extrabold text-sun">WPFF</div>
+                <div class="text-xs font-bold text-white/55 mt-1">Water processed • full melt vibes</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Category cards (visual gallery grid) -->
-        <div class="mt-10 grid lg:grid-cols-4 md:grid-cols-2 gap-6">
-
-          <!-- DRYSIFT -->
-          <article class="card rounded-3xl overflow-hidden gallery-item" data-cat="drysift" data-title="Drysift" data-aos="fade-up">
+        <!-- Actual gallery grid -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="80" id="galleryGrid">
+          <!-- Item template (duplicate as needed) -->
+          <article class="card rounded-3xl overflow-hidden" data-cat="drysift">
             <div class="p-6">
-              <div class="text-xs font-extrabold text-sun heading">Category</div>
-              <h3 class="mt-2 font-extrabold text-sun text-xl">Drysift</h3>
-              <p class="mt-2 text-sm text-white/70 font-bold">
-                Classic style, warm tones, and that traditional feel — always a favorite.
+              <div class="text-xs font-extrabold text-sun heading">Dry Sift</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">
+                “texto” (Keep this as a placeholder for the real description.)
               </p>
-              <div class="mt-5 aspect-[1/1] rounded-2xl overflow-hidden ph flex items-center justify-center text-white/35 font-bold">
-                <!-- Replace with your image -->
-                <img src="texto" alt="Drysift visual" class="w-full h-full object-cover opacity-90" loading="lazy">
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35 flex items-center justify-center text-white/35 font-bold">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
             </div>
           </article>
 
-          <!-- FROZEN -->
-          <article class="card rounded-3xl overflow-hidden gallery-item" data-cat="frozen" data-title="Frozen" data-aos="fade-up" data-aos-delay="60">
+          <article class="card rounded-3xl overflow-hidden" data-cat="frozen">
             <div class="p-6">
-              <div class="text-xs font-extrabold text-sun heading">Category</div>
-              <h3 class="mt-2 font-extrabold text-sun text-xl">Frozen</h3>
-              <p class="mt-2 text-sm text-white/70 font-bold">
-                Crisp expression, brighter resin notes, and sharp detail in the finish.
-              </p>
-              <div class="mt-5 aspect-[1/1] rounded-2xl overflow-hidden ph">
-                <img src="texto" alt="Frozen visual" class="w-full h-full object-cover opacity-90" loading="lazy">
+              <div class="text-xs font-extrabold text-sun heading">Frozen</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
             </div>
           </article>
 
-          <!-- STATIC -->
-          <article class="card rounded-3xl overflow-hidden gallery-item" data-cat="static" data-title="Static" data-aos="fade-up" data-aos-delay="120">
+          <article class="card rounded-3xl overflow-hidden" data-cat="static">
             <div class="p-6">
-              <div class="text-xs font-extrabold text-sun heading">Category</div>
-              <h3 class="mt-2 font-extrabold text-sun text-xl">Static</h3>
-              <p class="mt-2 text-sm text-white/70 font-bold">
-                Clean visuals, refined texture — for people who love precision.
-              </p>
-              <div class="mt-5 aspect-[1/1] rounded-2xl overflow-hidden ph">
-                <img src="texto" alt="Static visual" class="w-full h-full object-cover opacity-90" loading="lazy">
+              <div class="text-xs font-extrabold text-sun heading">Static</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
             </div>
           </article>
 
-          <!-- WPFF -->
-          <article class="card rounded-3xl overflow-hidden gallery-item" data-cat="wpff" data-title="WPFF" data-aos="fade-up" data-aos-delay="180">
+          <article class="card rounded-3xl overflow-hidden" data-cat="wpff">
             <div class="p-6">
-              <div class="text-xs font-extrabold text-sun heading">Category</div>
-              <h3 class="mt-2 font-extrabold text-sun text-xl">WPFF</h3>
-              <p class="mt-2 text-sm text-white/70 font-bold">
-                Water processed full melt vibes — melt-focused and visually striking.
-              </p>
-              <div class="mt-5 aspect-[1/1] rounded-2xl overflow-hidden ph">
-                <img src="texto" alt="WPFF visual" class="w-full h-full object-cover opacity-90" loading="lazy">
+              <div class="text-xs font-extrabold text-sun heading">WPFF</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
             </div>
           </article>
 
+          <article class="card rounded-3xl overflow-hidden" data-cat="drysift">
+            <div class="p-6">
+              <div class="text-xs font-extrabold text-sun heading">Dry Sift</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="card rounded-3xl overflow-hidden" data-cat="static">
+            <div class="p-6">
+              <div class="text-xs font-extrabold text-sun heading">Static</div>
+              <h3 class="mt-2 font-extrabold text-white/90 text-lg">Visual Study — “texto”</h3>
+              <p class="mt-2 text-sm text-white/65 font-bold">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER (smoky, centered logo like your screenshot) -->
-    <section class="pt-10 pb-16">
+    <!-- FOOTER (inspired by your last screenshot: centered logo + line of text) -->
+    <section class="pb-16">
       <div class="mx-auto max-w-6xl px-4 layer-top">
-        <div class="card smoke rounded-3xl p-10 md:p-14 text-center" data-aos="fade-up">
+        <div class="divider mb-10"></div>
+
+        <div class="card rounded-3xl p-10 md:p-14 text-center" data-aos="fade-up">
           <div class="flex justify-center">
             <img
-              src="./streetzfarmz-logo.png"
-              alt="Street Farmz logo"
-              class="h-28 w-28 md:h-32 md:w-32 object-contain logo-glow select-none"
+              src="./STREETZFARM_LOGO_MAROC.png"
+              alt="Street Farmz"
+              class="w-[140px] sm:w-[170px] md:w-[190px] h-auto select-none opacity-95"
               draggable="false"
             />
           </div>
 
-          <p class="mt-6 text-white/75 font-bold leading-relaxed">
-            We’re here for the culture and the craft — textures, details, and the love for clean resin.
-            Stay responsible, respect your local laws, and keep the vibe positive.
+          <p class="mt-6 text-sm sm:text-base text-white/75 font-bold leading-relaxed max-w-3xl mx-auto">
+            We’re here for the culture — for the people who love texture, aroma, melt, and the craft behind it.
+            This page is a visual showcase meant to educate and inspire.
           </p>
 
-          <div class="mt-8 divider"></div>
-
-          <p class="mt-6 text-xs text-white/45 font-bold">
-            © <span id="year"></span> TRICHOMES ALCHEMY • Street Farmz
+          <p class="mt-4 text-xs text-white/45 font-bold">
+            Respect the laws in your area • 18+ where applicable • No sales content
           </p>
         </div>
+
+        <footer class="mt-10 text-center text-xs text-white/45 font-bold">
+          <p>© <span id="year"></span> TRICHOMES ALCHEMY • Street Farmz</p>
+        </footer>
       </div>
     </section>
-
   </main>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -603,56 +644,35 @@
     AOS.init({ once: true, duration: 700, easing: "ease-out-cubic", offset: 70 });
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Browse dropdown + filtering
-    const browseBtn = document.getElementById("browseBtn");
-    const browseMenu = document.getElementById("browseMenu");
+    // Gallery filtering + search (simple and clean)
+    const categorySelect = document.getElementById("categorySelect");
     const searchInput = document.getElementById("searchInput");
-    const clearBtn = document.getElementById("clearFilters");
-    const items = Array.from(document.querySelectorAll(".gallery-item"));
-
-    let currentCat = "all";
+    const grid = document.getElementById("galleryGrid");
+    const items = Array.from(grid.querySelectorAll("[data-cat]"));
 
     function applyFilters() {
+      const cat = (categorySelect.value || "all").toLowerCase();
       const q = (searchInput.value || "").trim().toLowerCase();
+
       items.forEach(el => {
-        const cat = (el.dataset.cat || "").toLowerCase();
-        const title = (el.dataset.title || "").toLowerCase();
-
-        const catOk = (currentCat === "all") || (cat === currentCat);
-        const qOk = !q || title.includes(q);
-
-        el.style.display = (catOk && qOk) ? "" : "none";
+        const elCat = (el.getAttribute("data-cat") || "").toLowerCase();
+        const text = (el.innerText || "").toLowerCase();
+        const passCat = (cat === "all") ? true : elCat === cat;
+        const passSearch = q ? text.includes(q) : true;
+        el.style.display = (passCat && passSearch) ? "" : "none";
       });
     }
 
-    browseBtn.addEventListener("click", () => {
-      browseMenu.classList.toggle("hidden");
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!browseBtn.contains(e.target) && !browseMenu.contains(e.target)) {
-        browseMenu.classList.add("hidden");
-      }
-    });
-
-    // Category selection
-    browseMenu.querySelectorAll("button[data-cat]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        currentCat = btn.dataset.cat;
-        browseMenu.classList.add("hidden");
-        applyFilters();
-      });
-    });
-
-    // Search
+    categorySelect.addEventListener("change", applyFilters);
     searchInput.addEventListener("input", applyFilters);
 
-    // Clear filters
-    clearBtn.addEventListener("click", () => {
-      currentCat = "all";
-      searchInput.value = "";
-      applyFilters();
+    // Clicking dropdown options sets filter too
+    document.querySelectorAll("[data-filter]").forEach(a => {
+      a.addEventListener("click", (e) => {
+        const v = (a.getAttribute("data-filter") || "all").toLowerCase();
+        categorySelect.value = v;
+        applyFilters();
+      });
     });
 
     applyFilters();
