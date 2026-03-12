@@ -22,7 +22,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,8 +32,7 @@
         extend: {
           fontFamily: {
             display: ["Bebas Neue", "ui-sans-serif", "system-ui"],
-            body: ["Bebas Neue", "ui-sans-serif", "system-ui"],
-            hand: ['"Art of Rejection"', '"Permanent Marker"', "cursive"]
+            handwritten: ["Permanent Marker", "cursive"]
           },
           colors: {
             ink: "#070608",
@@ -41,10 +40,8 @@
             ember: "#FF3B1F",
             flame: "#FF6A00",
             amber: "#FFB000",
-            sand: "#C9AF74",
-            sand2: "#D6BB7A",
-            soft: "#9C948E",
-            line: "rgba(201,175,116,0.24)"
+            sun: "#FFD35A",
+            line: "rgba(255,179,0,0.22)"
           },
           boxShadow: {
             glow: "0 0 26px rgba(255,106,0,0.14), 0 0 70px rgba(255,59,31,0.10)",
@@ -63,7 +60,6 @@
     body {
       background: #070608;
       font-family: "Bebas Neue", ui-sans-serif, system-ui;
-      color: #fff;
       letter-spacing: 0.02em;
     }
 
@@ -71,8 +67,8 @@
       background:
         radial-gradient(900px 520px at 18% 8%, rgba(255,106,0,.14), transparent 60%),
         radial-gradient(820px 520px at 78% 16%, rgba(255,59,31,.12), transparent 60%),
-        radial-gradient(640px 460px at 45% 22%, rgba(255,176,0,.08), transparent 58%),
-        linear-gradient(to bottom, #070608, #0b0709 45%, #070608);
+        radial-gradient(640px 460px at 45% 22%, rgba(255,176,0,.10), transparent 58%),
+        linear-gradient(to bottom, #070608, #0E0A0D 45%, #070608);
       position: relative;
       overflow: hidden;
     }
@@ -81,7 +77,7 @@
       position: absolute;
       inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-      opacity: .05;
+      opacity: .06;
       pointer-events: none;
       mix-blend-mode: overlay;
       z-index: 0;
@@ -92,85 +88,70 @@
       position: absolute;
       inset: -2px;
       background:
-        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
       background-size: 44px 44px;
-      opacity: .12;
+      opacity: .14;
       pointer-events: none;
       z-index: 0;
       mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 72%);
     }
 
     .layer-top { position: relative; z-index: 10; }
-    .heading {
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .nav-wrap {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
-    }
-
-    .nav-link {
-      color: rgba(255,255,255,.78);
-      transition: color .18s ease;
-    }
-    .nav-link:hover { color: #D6BB7A; }
+    .heading { letter-spacing: 0.10em; text-transform: uppercase; }
 
     .card {
-      background: linear-gradient(180deg, rgba(20,16,20,0.88), rgba(10,8,10,0.88));
-      border: 1px solid rgba(201,175,116,0.18);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,176,0,0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
     }
     .card:hover {
-      border-color: rgba(201,175,116,0.28);
-      box-shadow: 0 0 0 1px rgba(255,106,0,0.04), 0 14px 40px rgba(0,0,0,.35);
+      border-color: rgba(255,176,0,0.28);
+      box-shadow: 0 0 0 1px rgba(255,106,0,0.06), 0 18px 60px rgba(0,0,0,.48);
       transform: translateY(-1px);
     }
 
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,175,116,.28), rgba(255,106,0,.12), transparent);
-      opacity: .85;
+      background: linear-gradient(90deg, transparent, rgba(255,176,0,.32), rgba(255,106,0,.26), rgba(255,59,31,.22), transparent);
+      opacity: .9;
     }
 
     .accent-line {
       height: 3px;
       border-radius: 999px;
-      width: 126px;
-      background: linear-gradient(90deg, rgba(255,59,31,.95), rgba(255,176,0,.85));
+      background: linear-gradient(90deg, rgba(255,59,31,.85), rgba(255,106,0,.85), rgba(255,176,0,.85));
       box-shadow: 0 0 18px rgba(255,106,0,.18);
+      opacity: .95;
     }
 
     .btn-brand {
-      background: linear-gradient(90deg, rgba(255,59,31,.30), rgba(255,106,0,.22), rgba(255,176,0,.18));
-      border: 1px solid rgba(201,175,116,0.28);
+      background: linear-gradient(90deg, rgba(255,59,31,.35), rgba(255,106,0,.28), rgba(255,176,0,.20));
+      border: 1px solid rgba(255,176,0,0.28);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 14px 44px rgba(0,0,0,.45), 0 0 18px rgba(255,106,0,.10);
-      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 14px 44px rgba(0,0,0,.55), 0 0 28px rgba(255,106,0,.12);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
     }
     .btn-brand:hover {
       transform: translateY(-1px);
-      border-color: rgba(214,187,122,0.44);
-      box-shadow: 0 18px 58px rgba(0,0,0,.55), 0 0 22px rgba(255,106,0,.14);
+      border-color: rgba(255,211,90,0.40);
+      box-shadow: 0 18px 58px rgba(0,0,0,.62), 0 0 36px rgba(255,106,0,.18);
+      filter: saturate(1.1);
     }
 
     .btn-ghost {
-      border: 1px solid rgba(201,175,116,0.18);
+      border: 1px solid rgba(255,176,0,0.18);
       background: rgba(255,255,255,0.03);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
     }
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(201,175,116,0.32);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,176,0,0.30);
       transform: translateY(-1px);
     }
 
@@ -183,8 +164,8 @@
       left: 0;
       width: min(340px, 92vw);
       border-radius: 18px;
-      border: 1px solid rgba(201,175,116,0.18);
-      background: rgba(10,8,10,0.92);
+      border: 1px solid rgba(255,176,0,0.18);
+      background: rgba(10,8,10,0.78);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: 0 18px 60px rgba(0,0,0,.55);
@@ -200,15 +181,13 @@
       gap: 10px;
       padding: 12px 14px;
       color: rgba(255,255,255,.78);
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      font-weight: 800;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.06);
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .drop-item:hover {
-      background: rgba(255,255,255,0.04);
-      color: rgba(214,187,122,0.96);
-    }
+    .drop-item:hover { background: rgba(255,255,255,0.04); color: rgba(255,211,90,0.95); }
 
     .dot {
       width: 9px;
@@ -226,114 +205,67 @@
       font-family: "Bebas Neue", ui-sans-serif, system-ui;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(214,187,122,0.98);
-      opacity: .98;
+      color: rgba(255,211,90,0.95);
+      opacity: .95;
+      text-shadow: 0 0 18px rgba(255,106,0,0.18);
     }
     .subbrand::before {
       content: "";
       height: 1px;
-      width: 52px;
-      background: linear-gradient(90deg, transparent, rgba(201,175,116,.6), rgba(255,106,0,.45));
+      width: 54px;
+      background: linear-gradient(90deg, transparent, rgba(255,176,0,.55), rgba(255,106,0,.55));
       opacity: .9;
     }
 
-    .hero-copy {
-      color: rgba(214,187,122,0.98);
-    }
-
-    .sand-title { color: #D6BB7A; }
-    .sand-soft { color: #C9AF74; }
-    .text-soft { color: #9C948E; }
-
-    .pill {
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.72);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-    }
-
     .handwritten {
-      font-family: "Art of Rejection", "Permanent Marker", cursive;
-      color: rgba(255,255,255,.98);
-      line-height: 1.06;
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
-    }
-
-    .quote-sm {
-      font-family: "Art of Rejection", "Permanent Marker", cursive;
-      color: rgba(255,255,255,.98);
-      line-height: 1;
-      text-transform: uppercase;
-      transform: rotate(-2deg);
-    }
-
-    .section-copy {
-      color: rgba(220,220,220,.76);
-      font-size: 1.08rem;
-      line-height: 1.55;
-      letter-spacing: 0.012em;
-    }
-
-    .info-copy {
-      color: rgba(215,215,215,.72);
-      font-size: 0.98rem;
-      line-height: 1.6;
-      letter-spacing: 0.015em;
-    }
-
-    .meta-copy {
-      color: rgba(180,180,180,.52);
-      font-size: 0.92rem;
-      letter-spacing: 0.03em;
-    }
-
-    .gallery-card-title {
-      color: #FFD35A;
-      font-size: 2rem;
-      line-height: 1;
+      font-family: "Permanent Marker", cursive;
       letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.95);
+      text-shadow: 0 0 14px rgba(255,255,255,.06);
     }
 
     .footer-quote {
-      font-family: "Art of Rejection", "Permanent Marker", cursive;
-      color: rgba(255,255,255,.98);
-      line-height: 1.04;
+      font-family: "Permanent Marker", cursive;
       text-transform: uppercase;
+      color: rgba(255,255,255,.97);
+      line-height: 1.1;
+      text-shadow: 0 0 14px rgba(255,255,255,.06);
     }
 
-    .verification-copy {
-      color: rgba(255,255,255,.92);
-      font-size: 1rem;
-      line-height: 1.45;
-      letter-spacing: 0.012em;
+    .info-text {
+      color: rgba(255,255,255,.78);
+      font-size: 1.15rem;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
     }
 
-    @media (max-width: 768px) {
-      .gallery-card-title { font-size: 1.6rem; }
+    .small-meta {
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
 
-<body class="text-white font-body">
+<body class="text-white font-display">
   <!-- TOP NAV -->
   <header class="fixed top-0 left-0 right-0 z-50">
-    <div class="mx-auto max-w-7xl px-3 sm:px-4">
-      <div class="nav-wrap mt-0.5 rounded-b-2xl rounded-t-none px-4 sm:px-5 py-3 flex items-center justify-between gap-4">
-        <a href="#home" class="flex items-center gap-3 min-w-0">
-          <div class="leading-none min-w-0">
-            <div class="font-display heading text-[15px] sm:text-[16px] sand-title truncate">TRICHOMES ALCHEMY</div>
-            <div class="text-[11px] sm:text-[12px] text-white/60 tracking-[0.01em] truncate">Street FarmZ — Visual Gallery</div>
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/45 backdrop-blur-md px-4 py-3">
+        <a href="#home" class="flex items-center gap-3">
+          <div class="leading-tight">
+            <div class="font-display heading text-[16px] text-sun">TRICHOMES ALCHEMY</div>
+            <div class="text-[12px] text-white/55 tracking-[0.08em]">Street Farmz — Visual Gallery</div>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-[14px] font-semibold">
-          <a class="nav-link" href="#home">Home</a>
-          <a class="nav-link" href="#about">About us</a>
-          <a class="nav-link" href="#gallery">Gallery</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-white/70 tracking-[0.08em]">
+          <a class="hover:text-sun transition" href="#home">Home</a>
+          <a class="hover:text-sun transition" href="#about">About us</a>
+          <a class="hover:text-sun transition" href="#gallery">Gallery</a>
         </nav>
 
-        <a href="#gallery" class="shrink-0 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 hover:border-white/20 transition">
+        <a href="#gallery" class="shrink-0 rounded-full border border-white/10 bg-black/35 backdrop-blur-md px-3 py-2 hover:border-white/20 transition">
           <img
             src="./STREETZFARM_LETTERING.png"
             alt="View Gallery"
@@ -350,7 +282,7 @@
 
     <!-- HERO -->
     <section class="min-h-screen pt-28 pb-16 flex items-start">
-      <div class="mx-auto max-w-7xl px-4 w-full layer-top">
+      <div class="mx-auto max-w-6xl px-4 w-full layer-top">
         <div class="grid lg:grid-cols-12 gap-10 items-start">
 
           <!-- LEFT -->
@@ -359,14 +291,14 @@
               <img
                 src="./STREETZFARM_LOGO_MAROC.png"
                 alt="Street Farmz logo"
-                class="w-[180px] sm:w-[220px] md:w-[250px] h-auto select-none drop-shadow-[0_0_28px_rgba(255,106,0,0.18)]"
+                class="w-[180px] sm:w-[220px] md:w-[260px] h-auto select-none drop-shadow-[0_0_28px_rgba(255,106,0,0.18)]"
                 draggable="false"
               />
             </div>
 
-            <div class="mt-7 accent-line mx-auto lg:mx-0"></div>
+            <div class="mt-8 w-44 mx-auto lg:mx-0 accent-line"></div>
 
-            <h1 class="mt-6 font-display heading sand-title text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
+            <h1 class="mt-6 font-display heading text-sun text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
               STREETZ FARMZ
             </h1>
 
@@ -376,7 +308,7 @@
               </span>
             </div>
 
-            <div class="mt-6 hero-copy max-w-2xl text-[1rem] sm:text-[1.05rem] leading-[1.45]">
+            <div class="mt-6 text-white/65 max-w-2xl info-text">
               <p>
                 This is Moroccan hash for people who know the difference —
                 and can’t unsee it once they do.
@@ -390,84 +322,83 @@
 
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#gallery"
-                 class="btn-brand rounded-full px-7 py-3 text-white inline-flex items-center justify-center gap-2 text-[1rem]">
+                 class="btn-brand rounded-full px-7 py-3 text-white inline-flex items-center justify-center gap-2 tracking-[0.06em]">
                 <span>Explore the Gallery</span>
                 <span aria-hidden="true" class="text-white/90">➜</span>
               </a>
 
               <a href="#about"
-                 class="btn-ghost rounded-full px-7 py-3 sand-title inline-flex items-center justify-center text-[1rem]">
+                 class="btn-ghost rounded-full px-7 py-3 text-sun inline-flex items-center justify-center tracking-[0.06em]">
                 About us
               </a>
             </div>
 
-            <div class="mt-9">
-              <div class="flex flex-wrap gap-x-5 gap-y-2 items-end">
-                <div class="quote-sm text-[1.55rem]">Handcrafted</div>
-                <div class="quote-sm text-[1.55rem]">Organic</div>
-                <div class="quote-sm text-[1.55rem]">Refined</div>
-                <div class="quote-sm text-[1.55rem]">Verified</div>
-              </div>
-
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="pill px-4 py-2 rounded-full text-[0.95rem]">Hand selection</span>
-                <span class="pill px-4 py-2 rounded-full text-[0.95rem]">Cold cure</span>
-                <span class="pill px-4 py-2 rounded-full text-[0.95rem]">Organic mindset</span>
-                <span class="pill px-4 py-2 rounded-full text-[0.95rem]">Micron focus</span>
-              </div>
+            <div class="mt-10 flex flex-wrap gap-3 text-sm text-white/70 tracking-[0.06em]">
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Handcrafted</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Organic</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Refined</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Verified</span>
             </div>
           </div>
 
           <!-- RIGHT -->
           <div class="lg:col-span-5" data-aos="fade-left">
-            <div class="card rounded-[28px] p-6 md:p-8 shadow-glow">
+            <div class="card rounded-3xl p-6 md:p-8 shadow-glow">
               <div class="flex items-center justify-between">
-                <h2 class="font-display heading sand-title text-[2.15rem] leading-none">ABOUT US</h2>
+                <h2 class="font-display heading text-sun text-xl">About us</h2>
               </div>
 
               <div class="divider my-5"></div>
 
-              <div class="space-y-5 text-white/80 text-[0.96rem] leading-[1.45]">
+              <div class="space-y-4 text-white/80 text-base">
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-amber"></span>
                   <p>
-                    <span class="sand-title">Origin:</span><br>
-                    STREETZFARMZ TELLS ITS STORY STRAIGHT — TERROIR, TECHNIQUE, AND THE HANDS THAT TOUCHED IT FIRST.
+                    <span class="text-sun">Origin:</span>
+                    The Rif doesn’t need a rebrand. We just tell its story straight — terroir, technique, and the hands that touched it first.
                   </p>
                 </div>
 
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-flame"></span>
                   <p>
-                    <span class="sand-title">Process:</span><br>
-                    FROM SIFT TO STATIC, EVERY METHOD LEAVES A DIFFERENT FINGERPRINT. WE DOCUMENT THEM ALL SO YOU CAN TASTE THE DIFFERENCE ON YOUR EXPERIENCE.
+                    <span class="text-sun">Process:</span>
+                    From sift to static, every method leaves a different fingerprint. We document them all so you can taste the difference before you buy.
                   </p>
                 </div>
 
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-ember"></span>
                   <p>
-                    <span class="sand-title">Gallery:</span><br>
-                    FROZEN, STATIC, DRY SIFT — ORGANIZED BY PROCESS, NOT BY HYPE. COMPARE WHAT MATTERS.
+                    <span class="text-sun">Gallery:</span>
+                    Frozen, Static, Dry Sift — organized by process, not by hype. Compare what matters.
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
+        </div>
+
+        <div class="mt-14 flex justify-center text-white/55 text-xs tracking-[0.25em] uppercase">
+          <a href="#about" class="hover:text-sun transition inline-flex items-center gap-3">
+            <span>Scroll</span>
+            <span class="h-[1px] w-16 bg-white/25"></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- BROWSE + SEARCH -->
+    <!-- BROWSE + SEARCH BAR -->
     <section class="pb-10">
-      <div class="mx-auto max-w-7xl px-4 layer-top" data-aos="fade-up">
+      <div class="mx-auto max-w-6xl px-4 layer-top" data-aos="fade-up">
         <div class="card rounded-3xl p-4 md:p-5">
           <div class="flex flex-col md:flex-row gap-3 md:items-center">
             <div class="relative">
               <details class="dropdown">
-                <summary class="btn-brand rounded-2xl px-4 py-3 text-white inline-flex items-center gap-3 text-[0.95rem]">
+                <summary class="btn-brand rounded-2xl px-4 py-3 text-white inline-flex items-center gap-3 tracking-[0.08em]">
                   <span class="text-white/95">☰</span>
-                  <span class="tracking-[0.06em]">BROWSE CATEGORIES</span>
+                  <span>BROWSE CATEGORIES</span>
                   <span class="text-white/80">▾</span>
                 </summary>
 
@@ -486,20 +417,20 @@
             </div>
 
             <div class="flex-1">
-              <div class="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/35 px-4 py-3">
+              <div class="flex items-center gap-2 rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md px-4 py-3">
                 <span class="text-white/45">🔎</span>
                 <input
                   id="searchInput"
                   type="search"
-                  placeholder="Search the gallery…"
-                  class="w-full bg-transparent outline-none text-white/85 placeholder:text-white/35 text-[0.95rem]"
+                  placeholder="Search the gallery… (e.g. frozen, static, drysift, premium)"
+                  class="w-full bg-transparent outline-none text-white/85 placeholder:text-white/35 tracking-[0.04em]"
                 />
               </div>
             </div>
 
             <div class="md:w-[280px]">
               <select id="categorySelect"
-                      class="w-full rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-white/85 outline-none text-[0.95rem]">
+                      class="w-full rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md px-4 py-3 text-white/85 outline-none tracking-[0.05em]">
                 <option value="all">All</option>
                 <option value="drysift">Drysift</option>
                 <option value="fresh-frozen-static">Fresh Frozen Static</option>
@@ -512,82 +443,87 @@
               </select>
             </div>
           </div>
+
+          <p class="mt-3 text-sm text-white/50 tracking-[0.04em]">
+            Use the dropdown or selector to move through the different styles.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 layer-top">
+      <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
 
         <div class="grid lg:grid-cols-12 gap-10 items-start">
           <div class="lg:col-span-5" data-aos="fade-up">
-            <h2 class="font-display heading sand-title text-5xl md:text-6xl leading-[0.95]">
-              ABOUT US
+            <h2 class="font-display heading text-sun text-4xl md:text-5xl leading-[0.95]">
+              About us
             </h2>
 
-            <div class="mt-8 section-copy space-y-7">
+            <div class="mt-6 text-white/75 leading-relaxed space-y-5 text-[1.15rem]">
               <p>
-                WE DIDN’T START A BRAND. WE GOT TIRED OF THE NOISE.
+                We didn’t start a brand. We got tired of the noise.
               </p>
 
               <p>
-                THE MARKET IS FULL OF PRODUCT WITH NO PAPER TRAIL AND NAMES THAT MEAN NOTHING.
-                STREETZ FARMZ EXISTS BECAUSE SOMEONE HAD TO TAKE IT SERIOUSLY.
+                The market is full of product with no paper trail and names that mean nothing.
+                Streetz Farmz exists because someone had to take it seriously.
               </p>
 
               <p>
-                WE GO DIRECT. WE VERIFY. WE DOCUMENT EVERY BATCH FROM THE MOUNTAIN TO THE CLUB.
-                NOT BECAUSE IT’S TRENDY — BECAUSE IT’S THE ONLY WAY TO KNOW WHAT YOU’RE ACTUALLY HANDLING.
+                We go direct. We verify. We document every batch from the mountain to the club.
+                Not because it’s trendy — because it’s the only way to know what you’re actually handling.
               </p>
 
               <p>
-                RIF HERITAGE IS CENTURIES DEEP. THE LEAST WE CAN DO IS RESPECT IT.
+                Rif heritage is centuries deep. The least we can do is respect it.
               </p>
             </div>
 
-            <div class="mt-9">
-              <div class="handwritten text-3xl sm:text-4xl leading-[1.05]">
-                THE STREETS KNOW WHATS REAL<br>SO DO WE
-              </div>
-              <div class="mt-3 handwritten text-lg opacity-95 normal-case">
-                Fuente: Art of rejection
-              </div>
+            <div class="mt-8 handwritten text-xl sm:text-2xl leading-[1.25]">
+              THE STREETS KNOW WHATS REAL SO DO WE
             </div>
           </div>
 
           <div class="lg:col-span-7 grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="80">
-            <div class="card rounded-[28px] p-6 md:p-7">
-              <h3 class="sand-title text-[2.1rem] leading-none">STREETZ HERITAGE</h3>
-              <p class="mt-5 info-copy">
-                THE RIF DIDN’T WAIT TO BE DISCOVERED. ITS SOIL, ALTITUDE, AND GENERATIONAL KNOWLEDGE WERE ALREADY PRODUCING SOME OF THE WORLD’S MOST RESPECTED RESIN LONG BEFORE ANYONE PUT A LABEL ON IT. STREETZ FARMZ CARRIES THAT LINEAGE INTO GLOBAL CULTURE — SAME ROOTS, SHARPER EYE, NO APOLOGIES.
+            <div class="card rounded-3xl p-6">
+              <h3 class="text-sun text-2xl tracking-[0.04em]">Streetz Heritage</h3>
+              <p class="mt-3 text-white/80 text-[1rem] leading-relaxed">
+                The Rif didn’t wait to be discovered. Its soil, altitude, and generational knowledge were already producing some of the world’s most respected resin long before anyone put a label on it.
+                Streetz Farmz carries that lineage into global culture — same roots, sharper eye, no apologies.
               </p>
-              <div class="mt-5 meta-copy">SUN • SOIL • ALTITUDE • LEGACY</div>
+              <div class="mt-4 small-meta text-white/55">Sun • Soil • Altitude • Legacy</div>
             </div>
 
-            <div class="card rounded-[28px] p-6 md:p-7">
-              <h3 class="sand-title text-[2.1rem] leading-none">TRICHOMES ALCHEMY</h3>
-              <p class="mt-5 info-copy">
-                DRY SIFT, STATIC REFINEMENT, MICRON DISCIPLINE — THIS IS WHERE SCIENCE MEETS INSTINCT. EVERY METHOD WE WORK WITH IS CHOSEN BECAUSE IT REVEALS SOMETHING TRUE ABOUT THE MATERIAL, NOT BECAUSE IT PHOTOGRAPHS WELL. THE ALCHEMY IS IN KNOWING WHEN TO STOP. MOST DON’T.
+            <div class="card rounded-3xl p-6">
+              <h3 class="text-sun text-2xl tracking-[0.04em]">Trichomes Alchemy</h3>
+              <p class="mt-3 text-white/80 text-[1rem] leading-relaxed">
+                Dry sift, static refinement, micron discipline — this is where science meets instinct.
+                Every method we work with is chosen because it reveals something true about the material, not because it photographs well.
+                The alchemy is in knowing when to stop. Most don’t.
               </p>
-              <div class="mt-5 meta-copy">TECHNIQUE • PATIENCE • DETAIL</div>
+              <div class="mt-4 small-meta text-white/55">Technique • Patience • Detail</div>
             </div>
 
-            <div class="card rounded-[28px] p-6 md:p-7">
-              <h3 class="sand-title text-[2.1rem] leading-none">CULTURE FIRST</h3>
-              <p class="mt-5 info-copy">
-                QUALITY WITHOUT CONTEXT IS JUST PRODUCT. WE MOVE WITH THE CULTURE THAT BUILT THIS CRAFT — RESPECTFUL OF WHERE IT COMES FROM, HONEST ABOUT WHAT IT IS. NO INFLATION, NO PERFORMANCE. IF IT’S REAL, IT SHOWS. IF IT DOESN’T SHOW, WE DON’T CARRY IT.
+            <div class="card rounded-3xl p-6">
+              <h3 class="text-sun text-2xl tracking-[0.04em]">Culture First</h3>
+              <p class="mt-3 text-white/80 text-[1rem] leading-relaxed">
+                Quality without context is just product. We move with the culture that built this craft — respectful of where it comes from, honest about what it is.
+                No inflation, no performance. If it’s real, it shows. If it doesn’t show, we don’t carry it.
               </p>
-              <div class="mt-5 meta-copy">GROUNDED • HONEST • REAL</div>
+              <div class="mt-4 small-meta text-white/55">Grounded • Honest • Real</div>
             </div>
 
-            <div class="card rounded-[28px] p-6 md:p-7">
-              <h3 class="sand-title text-[2.1rem] leading-none">VISUAL CURATION</h3>
-              <p class="mt-5 info-copy">
-                THE GALLERY EXISTS BECAUSE SEEING IS THE FIRST LANGUAGE OF THIS CRAFT. FROZEN, STATIC, DRY SIFT, FRESH FROZEN STATIC — EACH STYLE DOCUMENTED WITH THE SAME ATTENTION IT TOOK TO PRODUCE IT. BROWSE AT YOUR OWN PACE. THE DETAILS DO THE TALKING.
+            <div class="card rounded-3xl p-6">
+              <h3 class="text-sun text-2xl tracking-[0.04em]">Visual Curation</h3>
+              <p class="mt-3 text-white/80 text-[1rem] leading-relaxed">
+                The gallery exists because seeing is the first language of this craft.
+                Frozen, static, dry sift, fresh frozen static — each style documented with the same attention it took to produce it.
+                Browse at your own pace. The details do the talking.
               </p>
-              <div class="mt-5 meta-copy">FROZEN • STATIC • DRY SIFT • FFS</div>
+              <div class="mt-4 small-meta text-white/55">Frozen • Static • Dry Sift • FFS</div>
             </div>
           </div>
         </div>
@@ -596,93 +532,104 @@
 
     <!-- GALLERY -->
     <section id="gallery" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 layer-top">
+      <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
 
         <div class="flex items-end justify-between gap-6 flex-wrap" data-aos="fade-up">
           <div>
-            <h2 class="font-display heading sand-soft text-5xl md:text-6xl leading-[0.95]">
-              GALLERY
+            <h2 class="font-display heading text-sun text-4xl md:text-5xl leading-[0.95]">
+              Gallery
             </h2>
-            <p class="mt-4 text-white/90 text-[1rem] sm:text-[1.05rem] leading-[1.45] max-w-2xl">
-              THE PROOF IS IN THE TRICH, THE ALCHEMY<br>
-              EVERY BATCH DOCUMENTED. EVERY PROCESS LABELED.<br>
-              FROZEN, STATIC, DRY SIFT, WPFF — THIS ISN’T DECORATION.<br>
-              IT’S HOW YOU TELL APART CRAFTSMANSHIP FROM A CONVINCING LIE.
+            <p class="mt-3 text-white/80 max-w-2xl text-[1.05rem] leading-relaxed">
+              The proof is in the trich, the alchemy.
+              Every batch documented. Every process labeled.
+              Frozen, Static, Dry Sift, Fresh Frozen Static — this isn’t decoration.
+              It’s how you tell apart craftsmanship from a convincing lie.
             </p>
           </div>
 
-          <a href="#home" class="btn-ghost rounded-full px-5 py-2.5 sand-title text-[1rem]">
+          <a href="#home" class="btn-ghost rounded-full px-5 py-2.5 text-sun tracking-[0.05em]">
             Back to top
           </a>
         </div>
 
-        <!-- Gallery tiles -->
-        <div class="mt-10 grid sm:grid-cols-2 xl:grid-cols-4 gap-6" data-aos="fade-up">
-          <div class="card rounded-[28px] overflow-hidden">
-            <div class="p-5">
-              <div class="aspect-square rounded-[22px] overflow-hidden border border-white/10 bg-black/35">
-                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Dry Sift" class="w-full h-full object-cover opacity-95" loading="lazy">
+        <!-- Category tiles -->
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+          <div class="rounded-3xl overflow-hidden">
+            <div class="card p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Dry Sift" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
-              <div class="mt-5 text-center">
-                <div class="gallery-card-title">Dry Sift</div>
-                <div class="mt-2 text-soft text-[0.95rem]">Classic separation • clean structure</div>
+              <div class="mt-4 text-center">
+                <div class="text-sun text-2xl tracking-[0.04em]">Dry Sift</div>
               </div>
+            </div>
+            <div class="mt-3 text-center handwritten text-sm sm:text-base">
+              Old method, still unbeaten
             </div>
           </div>
 
-          <div class="card rounded-[28px] overflow-hidden">
-            <div class="p-5">
-              <div class="aspect-square rounded-[22px] overflow-hidden border border-white/10 bg-black/35">
-                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Frozen" class="w-full h-full object-cover opacity-95" loading="lazy">
+          <div class="rounded-3xl overflow-hidden">
+            <div class="card p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Frozen" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
-              <div class="mt-5 text-center">
-                <div class="gallery-card-title">Frozen</div>
-                <div class="mt-2 text-soft text-[0.95rem]">Cold approach • crisp profiles</div>
+              <div class="mt-4 text-center">
+                <div class="text-sun text-2xl tracking-[0.04em]">Frozen</div>
               </div>
+            </div>
+            <div class="mt-3 text-center handwritten text-sm sm:text-base">
+              Locked at peak, nothing lost
             </div>
           </div>
 
-          <div class="card rounded-[28px] overflow-hidden">
-            <div class="p-5">
-              <div class="aspect-square rounded-[22px] overflow-hidden border border-white/10 bg-black/35">
-                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Static" class="w-full h-full object-cover opacity-95" loading="lazy">
+          <div class="rounded-3xl overflow-hidden">
+            <div class="card p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Static" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
-              <div class="mt-5 text-center">
-                <div class="gallery-card-title">Static</div>
-                <div class="mt-2 text-soft text-[0.95rem]">Refinement • visual cleanliness</div>
+              <div class="mt-4 text-center">
+                <div class="text-sun text-2xl tracking-[0.04em]">Static</div>
               </div>
+            </div>
+            <div class="mt-3 text-center handwritten text-sm sm:text-base">
+              The patience process
             </div>
           </div>
 
-          <div class="card rounded-[28px] overflow-hidden">
-            <div class="p-5">
-              <div class="aspect-square rounded-[22px] overflow-hidden border border-white/10 bg-black/35">
-                <img src="./STREETZFARM_LOGO_MAROC.png" alt="WPFF" class="w-full h-full object-cover opacity-95" loading="lazy">
+          <div class="rounded-3xl overflow-hidden">
+            <div class="card p-5">
+              <div class="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="./STREETZFARM_LOGO_MAROC.png" alt="Fresh Frozen Static" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
-              <div class="mt-5 text-center">
-                <div class="gallery-card-title">WPFF</div>
-                <div class="mt-2 text-soft text-[0.95rem]">Water processed • full melt vibes</div>
+              <div class="mt-4 text-center">
+                <div class="text-sun text-2xl tracking-[0.04em]">Fresh Frozen Static</div>
               </div>
+            </div>
+            <div class="mt-3 text-center handwritten text-sm sm:text-base">
+              Cold start, clean finish
             </div>
           </div>
         </div>
 
-        <!-- Hidden filterable gallery -->
-        <div class="mt-12 hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="80" id="galleryGrid">
+        <!-- Actual gallery grid -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="80" id="galleryGrid">
           <article class="card rounded-3xl overflow-hidden" data-cat="drysift">
             <div class="p-6">
-              <div class="text-xs sand-title heading">Drysift</div>
+              <div class="text-xs text-sun heading">Drysift</div>
               <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
-              <p class="mt-2 text-base text-white/65">“texto”</p>
-              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+              <p class="mt-2 text-base text-white/65">
+                “texto” (Keep this as a placeholder for the real description.)
+              </p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35 flex items-center justify-center text-white/35">
                 <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
               </div>
             </div>
           </article>
+
           <article class="card rounded-3xl overflow-hidden" data-cat="frozen">
             <div class="p-6">
-              <div class="text-xs sand-title heading">Frozen</div>
+              <div class="text-xs text-sun heading">Frozen</div>
               <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
               <p class="mt-2 text-base text-white/65">“texto”</p>
               <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
@@ -690,9 +637,10 @@
               </div>
             </div>
           </article>
+
           <article class="card rounded-3xl overflow-hidden" data-cat="static">
             <div class="p-6">
-              <div class="text-xs sand-title heading">Static</div>
+              <div class="text-xs text-sun heading">Static</div>
               <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
               <p class="mt-2 text-base text-white/65">“texto”</p>
               <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
@@ -700,28 +648,79 @@
               </div>
             </div>
           </article>
-        </div>
 
-        <!-- STREETZ VERIFICATION -->
-        <div class="mt-14" data-aos="fade-up">
-          <h2 class="font-display heading sand-soft text-5xl md:text-6xl leading-[0.95]">
-            STREETZ VERIFICATION
-          </h2>
+          <article class="card rounded-3xl overflow-hidden" data-cat="fresh-frozen-static">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Fresh Frozen Static</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
 
-          <div class="mt-4 verification-copy max-w-4xl">
-            <p>VERIFICATION SYSTEM (PLACEHOLDER — TO DEVELOP ONCE YOU BRIEF ME)</p>
-            <p class="mt-1">TEASER COPY:</p>
-            <p class="mt-2">EVERY BATCH HAS A SIGNATURE. KNOW YOURS.</p>
-            <p class="mt-1">IN A MARKET WHERE LABELS LIE, WE BUILT A SYSTEM THAT DOESN’T.</p>
-            <p class="mt-1">EACH STREETZ FARMZ RELEASE COMES WITH A VERIFICATION TRAIL — FROM ORIGIN TO YOUR HANDS.</p>
-          </div>
+          <article class="card rounded-3xl overflow-hidden" data-cat="premium-drysift">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Premium Drysift</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="card rounded-3xl overflow-hidden" data-cat="premium-frozen">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Premium Frozen</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="card rounded-3xl overflow-hidden" data-cat="premium-static">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Premium Static</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="card rounded-3xl overflow-hidden" data-cat="premium-fresh-frozen-static">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Premium Fresh Frozen Static</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <article class="card rounded-3xl overflow-hidden" data-cat="static">
+            <div class="p-6">
+              <div class="text-xs text-sun heading">Static</div>
+              <h3 class="mt-2 text-white/90 text-2xl">Visual Study — “texto”</h3>
+              <p class="mt-2 text-base text-white/65">“texto”</p>
+              <div class="mt-5 aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 bg-black/35">
+                <img src="texto" alt="Gallery item" class="w-full h-full object-cover opacity-90" loading="lazy">
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <section class="pt-8">
-      <div class="mx-auto max-w-7xl px-4 layer-top">
+      <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
 
         <div class="text-center py-10 md:py-14" data-aos="fade-up">
@@ -738,13 +737,13 @@
             STREETZ KNOW WHATS REAL, SO DO WE
           </div>
 
-          <p class="mt-8 text-sm text-white/55">
+          <p class="mt-8 text-sm text-white/55 tracking-[0.04em]">
             Respect local laws in your area • 18+ where applicable • No sales content
           </p>
         </div>
       </div>
 
-      <footer class="mt-6 border-t border-white/5 bg-black/70 py-5 text-center text-sm text-white/40">
+      <footer class="mt-6 border-t border-white/5 bg-black/70 py-5 text-center text-sm text-white/40 tracking-[0.04em]">
         <p>© <span id="year"></span> TRICHOMES ALCHEMY • Street Farmz</p>
       </footer>
     </section>
@@ -758,10 +757,9 @@
     const categorySelect = document.getElementById("categorySelect");
     const searchInput = document.getElementById("searchInput");
     const grid = document.getElementById("galleryGrid");
-    const items = grid ? Array.from(grid.querySelectorAll("[data-cat]")) : [];
+    const items = Array.from(grid.querySelectorAll("[data-cat]"));
 
     function applyFilters() {
-      if (!grid || !items.length) return;
       const cat = (categorySelect.value || "all").toLowerCase();
       const q = (searchInput.value || "").trim().toLowerCase();
 
@@ -774,13 +772,13 @@
       });
     }
 
-    if (categorySelect) categorySelect.addEventListener("change", applyFilters);
-    if (searchInput) searchInput.addEventListener("input", applyFilters);
+    categorySelect.addEventListener("change", applyFilters);
+    searchInput.addEventListener("input", applyFilters);
 
     document.querySelectorAll("[data-filter]").forEach(a => {
       a.addEventListener("click", () => {
         const v = (a.getAttribute("data-filter") || "all").toLowerCase();
-        if (categorySelect) categorySelect.value = v;
+        categorySelect.value = v;
         applyFilters();
       });
     });
