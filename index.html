@@ -166,10 +166,7 @@
     }
 
     /* “Browse Categories” dropdown styling */
-    details.dropdown > summary {
-      list-style: none;
-      cursor: pointer;
-    }
+    details.dropdown > summary { list-style: none; cursor: pointer; }
     details.dropdown > summary::-webkit-details-marker { display:none; }
 
     .dropdown-panel {
@@ -197,10 +194,7 @@
       font-size: 13px;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
-    .drop-item:hover {
-      background: rgba(255,255,255,0.04);
-      color: rgba(255,211,90,0.95);
-    }
+    .drop-item:hover { background: rgba(255,255,255,0.04); color: rgba(255,211,90,0.95); }
 
     .dot {
       width: 9px;
@@ -211,7 +205,7 @@
       flex: 0 0 auto;
     }
 
-    /* NEW: Styled subtitle under STREETZ FARMZ */
+    /* Styled subtitle under STREETZ FARMZ */
     .subbrand {
       display: inline-flex;
       align-items: center;
@@ -286,23 +280,28 @@
 
             <div class="mt-8 w-44 mx-auto lg:mx-0 accent-line"></div>
 
-            <!-- CHANGED: title now on ONE LINE (no <br/>) -->
             <h1 class="mt-6 font-display heading text-sun text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
               STREETZ FARMZ
             </h1>
 
-            <!-- CHANGED: subtitle gets distinct “page style” -->
             <div class="mt-4">
               <span class="subbrand text-[13px] sm:text-[14px] md:text-[15px]">
                 Trichomes Alchemy
               </span>
             </div>
 
-            <p class="mt-4 text-white/65 font-bold max-w-2xl">
-              A clean, curated space for resin lovers — inspired by Rif heritage and modern precision.
-              If you’re into texture, aroma, melt, and the tiny details that separate “nice” from “special”,
-              you’re in the right place.
-            </p>
+            <!-- ✅ CHANGED PARAGRAPH 1 (as requested) -->
+            <div class="mt-6 text-white/65 font-bold max-w-2xl">
+              <p>
+                This is Moroccan hash for people who know the difference —
+                and can’t unsee it once they do.
+              </p>
+              <p class="mt-4">
+                Streetz Farmz sources small-batch resin directly from the mountains that invented it.
+                Hand-selected. Cold-cured. Verified.
+                Not curated for the algorithm. Built for the session.
+              </p>
+            </div>
 
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#gallery"
@@ -317,12 +316,12 @@
               </a>
             </div>
 
+            <!-- ✅ CHANGED: bottom words + removed "Static refinement" -->
             <div class="mt-10 flex flex-wrap gap-3 text-xs font-extrabold text-white/60">
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Hand selection</span>
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Cold cure</span>
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Organic mindset</span>
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Micron focus</span>
-              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Static refinement</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Handcrafted</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Organic</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Refined</span>
+              <span class="px-4 py-2 rounded-full border border-white/10 bg-white/5">Verified</span>
             </div>
           </div>
 
@@ -330,28 +329,38 @@
           <div class="lg:col-span-5" data-aos="fade-left">
             <div class="card rounded-3xl p-6 md:p-8 shadow-glow">
               <div class="flex items-center justify-between">
-                <h2 class="font-display heading text-sun text-xl">Curated Focus</h2>
-
-                <!-- CHANGED: removed "Visual notes" (red-marked) -->
-                <!-- (intentionally blank here) -->
+                <h2 class="font-display heading text-sun text-xl">About us</h2>
               </div>
 
               <div class="divider my-5"></div>
 
+              <!-- ✅ CHANGED PART 2 (as requested) -->
               <div class="space-y-4 text-white/80 font-bold text-sm">
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-amber"></span>
-                  <p><span class="text-sun">Origin:</span> Rif-inspired culture, terroir, and the story behind the resin.</p>
+                  <p>
+                    <span class="text-sun">Origin:</span>
+                    The Rif doesn’t need a rebrand. We just tell its story straight — terroir, technique, and the hands that touched it first.
+                  </p>
                 </div>
+
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-flame"></span>
-                  <p><span class="text-sun">Process:</span> From sift to static — calm technique, clean visuals, tight details.</p>
+                  <p>
+                    <span class="text-sun">Process:</span>
+                    From sift to static, every method leaves a different fingerprint. We document them all so you can taste the difference before you buy.
+                  </p>
                 </div>
+
                 <div class="flex items-start gap-3">
                   <span class="mt-2 h-2 w-2 rounded-full bg-ember"></span>
-                  <p><span class="text-sun">Gallery:</span> Frozen, Static, Dry Sift, and WPFF — organized so it’s easy to compare.</p>
+                  <p>
+                    <span class="text-sun">Gallery:</span>
+                    Frozen, Static, Dry Sift, WPFF — organized by process, not by hype. Compare what matters.
+                  </p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -423,7 +432,7 @@
       </div>
     </section>
 
-    <!-- ABOUT US -->
+    <!-- ABOUT US (unchanged section below) -->
     <section id="about" class="py-20">
       <div class="mx-auto max-w-6xl px-4 layer-top">
         <div class="divider mb-10"></div>
