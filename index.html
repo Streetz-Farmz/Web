@@ -110,24 +110,31 @@
     }
 
     .subbrand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: "Bebas Neue", ui-sans-serif, system-ui;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,211,90,0.95);
-      opacity: .95;
-      text-shadow: 0 0 18px rgba(255,106,0,0.18);
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: "Bebas Neue", ui-sans-serif, system-ui;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,211,90,0.95);
+  opacity: .95;
+  text-shadow: 0 0 18px rgba(255,106,0,0.18);
+  width: 100%;
+}
 
-    .subbrand::before {
-      content: "";
-      height: 1px;
-      width: 54px;
-      background: linear-gradient(90deg, transparent, rgba(255,176,0,.55), rgba(255,106,0,.55));
-      opacity: .9;
-    }
+.subbrand::before,
+.subbrand::after {
+  content: "";
+  height: 1px;
+  width: 54px;
+  background: linear-gradient(90deg, rgba(255,176,0,.55), rgba(255,106,0,.55));
+  opacity: .9;
+}
+
+.subbrand::after {
+  background: linear-gradient(90deg, rgba(255,106,0,.55), rgba(255,176,0,.55));
+}
 
     .info-text {
       color: rgba(255,255,255,.78);
@@ -185,11 +192,10 @@
         </h1>
 
         <div class="mt-4 flex justify-center">
-          <span class="subbrand text-[18px] sm:text-[20px] md:text-[22px]">
-            Trichomes Alchemy
-          </span>
-        </div>
-
+  <span class="subbrand text-[18px] sm:text-[20px] md:text-[22px]">
+    Trichomes Alchemy
+  </span>
+</div>
         <div class="mt-6 text-white/65 max-w-2xl mx-auto info-text text-center">
           <p>
             This is Moroccan hash for people who know the difference —
