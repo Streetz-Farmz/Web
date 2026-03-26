@@ -193,6 +193,44 @@
         height: 56vh;
       }
 
+      .footer-accent-line {
+  width: 240px;
+  max-width: 72vw;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff3b1f 0%, #ff6a00 45%, #ffd35a 100%);
+  box-shadow: 0 0 16px rgba(255,106,0,.22);
+}
+
+.insta-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: opacity 180ms ease, transform 180ms ease, color 180ms ease;
+}
+
+.insta-row:hover {
+  color: rgba(255,211,90,.98);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.insta-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: #ffd35a;
+  filter: drop-shadow(0 0 10px rgba(255,106,0,.18));
+}
+
       .hero-content {
         padding-top: 18px;
         padding-bottom: 80px;
@@ -262,32 +300,43 @@
       </div>
     </section>
 
-    <section class="pt-4">
-      <div class="mx-auto max-w-6xl px-4 layer-top">
-        <div class="text-center py-6 md:py-10">
-          <div class="flex justify-center">
-            <img
-              src="./STREETZFARM_LOGO_MAROC.png"
-              alt="Street Farmz"
-              class="w-[120px] sm:w-[150px] md:w-[170px] h-auto select-none opacity-95"
-              draggable="false"
-            />
-          </div>
-
-          <div class="mt-8 font-display heading text-2xl sm:text-4xl md:text-5xl text-white/95">
-            STREETZ KNOW WHATS REAL, SO DO WE
-          </div>
-
-          <p class="mt-8 text-sm text-white/55 tracking-[0.04em]">
-            Respect local laws in your area • 18+ where applicable • No sales content
-          </p>
-        </div>
+<section class="pt-4">
+  <div class="mx-auto max-w-6xl px-4 layer-top">
+    <div class="text-center py-6 md:py-10">
+      <div class="flex justify-center">
+        <img
+          src="./STREETZFARM_LOGO_MAROC.png"
+          alt="Street Farmz"
+          class="w-[120px] sm:w-[150px] md:w-[170px] h-auto select-none opacity-95"
+          draggable="false"
+        />
       </div>
 
-      <footer class="mt-4 border-t border-white/5 bg-black/70 py-5 text-center text-sm text-white/40 tracking-[0.04em]">
-        <p>© <span id="year"></span> TRICHOMES ALCHEMY • Street Farmz</p>
-      </footer>
-    </section>
+      <div class="mt-8 font-display heading text-2xl sm:text-4xl md:text-5xl text-white/95">
+        STREETZ KNOW WHATS REAL, SO DO WE
+      </div>
+
+      <p class="mt-8 text-sm text-white/55 tracking-[0.04em]">
+        Respect local laws in your area • 18+ where applicable • No sales content
+      </p>
+
+      <div class="mt-6 footer-accent-line"></div>
+
+      <div class="mt-4 flex justify-center">
+        <a href="https://instagram.com/instaexample" target="_blank" rel="noopener noreferrer" class="insta-row" aria-label="Instagram instaexample">
+          <svg class="insta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5Z"/>
+          </svg>
+          <span>@instaexample</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mt-4 border-t border-white/5 bg-black/70 py-5 text-center text-sm text-white/40 tracking-[0.04em]">
+    <p>© <span id="year"></span> TRICHOMES ALCHEMY • Street Farmz</p>
+  </footer>
+</section>
   </main>
 
   <script>
